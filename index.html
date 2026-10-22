@@ -275,34 +275,60 @@
         </div>
     </header>
 
-    <!-- Hero Section (Vedic Bhagwa Ambience with 4K Quality Desi Cow Image) -->
-    <section id="home" class="relative bg-[#200601] text-white overflow-hidden min-h-[680px] flex items-center">
-        <!-- Ultra 4K Quality Sacred Desi Cow Image with Deep Saffron & Mahogany Overlay -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=2400" 
-                 alt="Pavitra Desi Cow with Sacred Tilak in Braj Dham" 
-                 class="w-full h-full object-cover object-center opacity-35 scale-105 transition-transform duration-1000">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#2A0A02] via-[#350E04]/90 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#200601] via-transparent to-transparent"></div>
+    <!-- Hero Section (Vedic Bhagwa Ambience with Live Background Video of Sacred Gaushala) -->
+    <section id="home" class="relative bg-[#200601] text-white overflow-hidden min-h-[700px] flex items-center">
+        <!-- Live Ambient Background Video of Sacred Indian Gaushala & Gomata -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <video id="hero-bg-video" autoplay loop muted playsinline 
+                   poster="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Sri_Krishna_Goshala%2C_Begur%2C_Bengaluru_%282026%29_12.webm/960px--Sri_Krishna_Goshala%2C_Begur%2C_Bengaluru_%282026%29_12.webm.jpg"
+                   class="w-full h-full object-cover object-center scale-105 transition-all duration-700 opacity-75">
+                <!-- Fast Local Storage Sources (Instant 0ms Playback) -->
+                <source src="videos/gaushala.mp4" type="video/mp4">
+                <source src="videos/gaushala_480p.webm" type="video/webm">
+                <source src="videos/gaushala.webm" type="video/webm">
+                <!-- Live CDN Web Fallbacks -->
+                <source src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Sri_Krishna_Goshala%2C_Begur%2C_Bengaluru_%282026%29_12.webm" type="video/webm">
+                <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b4/Sri_Krishna_Goshala%2C_Begur%2C_Bengaluru_%282026%29_12.webm/Sri_Krishna_Goshala%2C_Begur%2C_Bengaluru_%282026%29_12.webm.360p.mpeg4.mov" type="video/mp4">
+            </video>
+            <!-- Translucent Saffron & Warm Mahogany Vignettes (Crisp visibility of video with high text legibility) -->
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(90deg, rgba(32, 6, 1, 0.80) 0%, rgba(42, 10, 2, 0.45) 55%, rgba(32, 6, 1, 0.30) 100%);"></div>
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(180deg, rgba(32, 6, 1, 0.50) 0%, rgba(32, 6, 1, 0.10) 45%, rgba(32, 6, 1, 0.85) 100%);"></div>
         </div>
+
+        <!-- Video Play / Pause Floating Toggle -->
+        <button id="video-toggle-btn" onclick="toggleHeroVideo()" title="Pause/Play Video" aria-label="Toggle Background Video" class="flex absolute bottom-4 right-4 sm:bottom-5 sm:right-6 z-20 items-center space-x-2 bg-black/50 hover:bg-black/75 backdrop-blur-md border border-kesar-400/40 text-white text-xs px-3.5 py-1.5 rounded-full transition shadow-lg cursor-pointer">
+            <i id="video-toggle-icon" class="fa-solid fa-pause text-kesar-300"></i>
+            <span class="text-[11px] font-medium tracking-wide">Live Gaushala</span>
+        </button>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <!-- Left Content -->
                 <div class="lg:col-span-8 space-y-7">
-                    <!-- Auspicious Bhagwa Badge -->
-                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-bhagwa-600/30 to-kesar-500/20 border border-kesar-400/40 text-kesar-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full backdrop-blur-md shadow-sm">
-                        <i class="fa-solid fa-om text-kesar-400"></i>
-                        <span>पवित्र गौ सेवा धाम • 500+ निराश्रित गौवंशों का आश्रय</span>
+                 
+                    <!-- Premium Bhagwa Live Badge -->
+                    <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-gradient-to-r from-orange-950/80 to-amber-900/40 px-3 py-1.5 shadow-md shadow-orange-950/30">
+                        <span class="relative flex h-2 w-2 shrink-0">
+                            <span class="absolute h-full w-full animate-ping rounded-full bg-amber-400 opacity-70"></span>
+                            <span class="relative h-2 w-2 rounded-full bg-amber-400"></span>
+                        </span>
+                        <span class="font-devanagari text-xs font-bold text-amber-200 sm:text-sm">
+                            ॥ जय गौ माता • 500+ गौवंशों का आश्रय ॥
+                        </span>
                     </div>
 
                     <!-- Heading with Royal Typography in Saffron Gold -->
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-serif leading-[1.15]">
-                        गोमाता की सेवा, <br>
-                        <span class="bg-gradient-to-r from-kesar-300 via-bhagwa-300 to-amber-200 bg-clip-text text-transparent">
-                            सनातन संस्कृति की रक्षा
-                        </span>
-                    </h1>
+                    <div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-serif leading-[1.14]">
+                            गोमाता की सेवा, <br>
+                            <span class="bg-gradient-to-r from-kesar-200 via-bhagwa-300 to-amber-200 bg-clip-text text-transparent drop-shadow-sm">
+                                सनातन संस्कृति की रक्षा
+                            </span>
+                        </h1>
+                        <div class="mt-3 flex items-center space-x-2 text-xs sm:text-sm font-devanagari font-semibold text-kesar-300/90 tracking-wide border-l-2 border-kesar-400 pl-3 italic">
+                            <span>"गावो विश्वस्य मातरः" — समस्त ब्रह्मांड की माता हैं गोमाता</span>
+                        </div>
+                    </div>
 
                     <!-- Description -->
                     <p class="text-base sm:text-lg text-gray-200 max-w-2xl font-light leading-relaxed">
@@ -310,19 +336,23 @@
                     </p>
 
                     <!-- CTAs -->
-                    <div class="flex flex-wrap gap-4 pt-2">
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
                         <a href="#donations" class="shimmer-bhagwa hover:opacity-95 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-bhagwa-600/40 flex items-center space-x-3 transition transform hover:-translate-y-1 border border-kesar-300 text-base">
                             <i class="fa-solid fa-hand-holding-dollar text-kesar-200 text-lg"></i>
                             <span>Sponsor Cow Fodder (₹500)</span>
                         </a>
-                        <a href="#gallery" class="bg-white/10 hover:bg-white/20 border border-kesar-400/40 text-white font-medium px-7 py-4 rounded-full backdrop-blur-md transition flex items-center space-x-2">
-                            <i class="fa-solid fa-camera text-kesar-300"></i>
-                            <span>Daily Gaushala Darshan</span>
+                        <a href="#gallery" class="bg-white/10 hover:bg-white/20 border border-kesar-400/50 text-white font-medium px-7 py-4 rounded-full backdrop-blur-md transition flex items-center space-x-2.5">
+                            <i class="fa-solid fa-circle-play text-kesar-300 text-lg"></i>
+                            <span>Gaushala Darshan (4K)</span>
                         </a>
+                        <!-- <a href="https://wa.me/919876543210" target="_blank" class="hidden sm:inline-flex items-center space-x-2 bg-emerald-600/80 hover:bg-emerald-600 border border-emerald-400/40 text-white text-sm font-semibold px-5 py-4 rounded-full backdrop-blur-md transition">
+                            <i class="fa-brands fa-whatsapp text-emerald-200 text-base"></i>
+                            <span>24x7 Helpline</span>
+                        </a> -->
                     </div>
 
                     <!-- Trust Seals / Badges -->
-                    <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-gray-300 border-t border-white/10">
+                    <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-gray-300 border-t border-white/15">
                         <div class="flex items-center space-x-2">
                             <i class="fa-solid fa-shield-halved text-kesar-400 text-base"></i>
                             <span>100% Tax Exempt (Sec 80G)</span>
@@ -335,32 +365,61 @@
                             <i class="fa-solid fa-file-invoice text-kesar-400 text-base"></i>
                             <span>Instant Digital Receipt</span>
                         </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-video text-kesar-400 text-base"></i>
+                            <span>Photo & Video Seva Proof</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Right Sanctum Card in Rich Bhagwa-Mahogany -->
                 <div class="lg:col-span-4 hidden lg:flex justify-end">
-                    <div class="bg-gradient-to-b from-[#4A1407]/90 to-[#2A0A02]/95 backdrop-blur-xl border border-kesar-500/40 p-7 rounded-3xl shadow-2xl text-center max-w-sm bhagwa-glow">
+                    <div class="bg-gradient-to-b from-[#3D1005]/92 via-[#2E0B03]/95 to-[#1A0401]/98 backdrop-blur-xl border border-kesar-500/40 p-7 rounded-3xl shadow-2xl text-center max-w-sm bhagwa-glow">
                         <div class="w-16 h-16 bg-gradient-to-tr from-bhagwa-600 to-kesar-400 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-lg font-bold border border-kesar-300/40">
                             <i class="fa-solid fa-hands-praying"></i>
                         </div>
                         <span class="text-xs uppercase tracking-widest text-kesar-300 font-bold block mb-1 font-royal">Pavitra Shloka</span>
-                        <p class="text-white text-lg font-serif italic leading-snug">
+                        <p class="text-white text-base sm:text-lg font-serif italic leading-snug">
                             "गौ सेवा ही सच्ची सेवा है, जहाँ गाय प्रसन्न होती है वहाँ समस्त देव वास करते हैं।"
                         </p>
+                        
+                        <!-- Daily Seva Progress Meter -->
                         <div class="my-4 h-px bg-gradient-to-r from-transparent via-kesar-500/50 to-transparent"></div>
-                        <div class="bg-black/40 p-3.5 rounded-xl border border-kesar-500/20 text-left space-y-1">
+                        <div class="bg-black/50 p-4 rounded-2xl border border-kesar-500/25 text-left space-y-2">
                             <div class="flex justify-between text-xs text-gray-200">
-                                <span>Today's Fodder Needed:</span>
+                                <span class="font-medium text-gray-300">Today's Gau Gras Goal:</span>
                                 <span class="text-kesar-300 font-bold">3,500 Kg</span>
                             </div>
-                            <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                                <div class="bg-gradient-to-r from-bhagwa-500 to-kesar-400 h-full w-[72%]"></div>
+                            <div class="w-full bg-white/10 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-bhagwa-500 via-kesar-400 to-amber-300 h-full w-[76%] rounded-full shadow-sm animate-pulse"></div>
                             </div>
-                            <span class="text-[10px] text-gray-300 block text-right">72% Fodder Sponsored Today</span>
+                            <div class="flex justify-between items-center text-[11px]">
+                                <span class="text-emerald-400 font-semibold flex items-center gap-1">
+                                    <i class="fa-solid fa-circle-check text-[10px]"></i> 2,680 Kg Sponsored
+                                </span>
+                                <span class="text-kesar-300 font-bold">76% Completed</span>
+                            </div>
                         </div>
-                        <a href="#donations" class="mt-4 inline-block w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-bhagwa-500/20 hover:bg-bhagwa-500/30 text-kesar-300 border border-kesar-500/40 transition">
-                            Contribute Today's Fodder &rarr;
+
+                        <!-- 1-Click Contribution Pill Buttons -->
+                        <div class="mt-4 pt-1">
+                            <span class="text-[11px] uppercase tracking-wider text-gray-400 block mb-2 font-semibold">Quick Seva Sankalp</span>
+                            <div class="grid grid-cols-3 gap-2">
+                                <a href="#donations" onclick="selectAmount(500)" class="py-2 px-1 bg-white/10 hover:bg-bhagwa-600/40 text-kesar-200 hover:text-white rounded-xl text-xs font-bold border border-kesar-400/30 transition">
+                                    ₹500
+                                </a>
+                                <a href="#donations" onclick="selectAmount(1100)" class="py-2 px-1 bg-white/10 hover:bg-bhagwa-600/40 text-kesar-200 hover:text-white rounded-xl text-xs font-bold border border-kesar-400/30 transition">
+                                    ₹1,100
+                                </a>
+                                <a href="#donations" onclick="selectAmount(2100)" class="py-2 px-1 bg-white/10 hover:bg-bhagwa-600/40 text-kesar-200 hover:text-white rounded-xl text-xs font-bold border border-kesar-400/30 transition">
+                                    ₹2,100
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="#donations" class="mt-4 inline-flex items-center justify-center space-x-2 w-full py-3 px-4 rounded-xl text-xs font-bold shimmer-bhagwa text-white border border-kesar-300 shadow-md transition transform hover:scale-[1.02]">
+                            <i class="fa-solid fa-heart text-kesar-200 text-xs"></i>
+                            <span>Contribute Today's Fodder &rarr;</span>
                         </a>
                     </div>
                 </div>
@@ -1601,6 +1660,10 @@
             donationSection.scrollIntoView({ behavior: 'smooth' });
         }
 
+        function selectAmount(val) {
+            selectDonation(val);
+        }
+
         // Form Submit Handler
         function handleDonationSubmit(e) {
             e.preventDefault();
@@ -1686,6 +1749,66 @@
         function closeMessageBox() {
             document.getElementById('custom-modal').classList.add('hidden');
         }
+
+        // Hero Background Video Controller & Autoplay Resilience
+        function toggleHeroVideo() {
+            const video = document.getElementById('hero-bg-video');
+            const icon = document.getElementById('video-toggle-icon');
+            if (video) {
+                if (video.paused) {
+                    video.play().then(() => {
+                        if (icon) {
+                            icon.classList.remove('fa-play');
+                            icon.classList.add('fa-pause');
+                        }
+                    }).catch(err => console.log('Video play error:', err));
+                } else {
+                    video.pause();
+                    if (icon) {
+                        icon.classList.remove('fa-pause');
+                        icon.classList.add('fa-play');
+                    }
+                }
+            }
+        }
+
+        // Auto-play insurance on page load and user interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('hero-bg-video');
+            const icon = document.getElementById('video-toggle-icon');
+            if (video) {
+                video.muted = true;
+                const promise = video.play();
+                if (promise !== undefined) {
+                    promise.then(() => {
+                        if (icon) {
+                            icon.classList.remove('fa-play');
+                            icon.classList.add('fa-pause');
+                        }
+                    }).catch(() => {
+                        // In case browser policy blocks initial autoplay, resume on first user interaction
+                        if (icon) {
+                            icon.classList.remove('fa-pause');
+                            icon.classList.add('fa-play');
+                        }
+                        const startOnGesture = () => {
+                            video.play().then(() => {
+                                if (icon) {
+                                    icon.classList.remove('fa-play');
+                                    icon.classList.add('fa-pause');
+                                }
+                            }).catch(() => {});
+                            window.removeEventListener('click', startOnGesture);
+                            window.removeEventListener('touchstart', startOnGesture);
+                            window.removeEventListener('scroll', startOnGesture);
+                        };
+                        window.addEventListener('click', startOnGesture, { once: true });
+                        window.addEventListener('touchstart', startOnGesture, { once: true });
+                        window.addEventListener('scroll', startOnGesture, { once: true });
+                    });
+                }
+            }
+        });
     </script>
 </body>
 </html>
