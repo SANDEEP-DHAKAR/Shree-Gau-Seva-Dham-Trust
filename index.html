@@ -11,21 +11,21 @@
             theme: {
                 extend: {
                     colors: {
-                        vedic: {
-                            50: '#f2fbf6',
-                            100: '#e1f6eb',
-                            200: '#c5eed9',
-                            300: '#99dfc0',
-                            400: '#64c8a0',
-                            500: '#3bab83',
-                            600: '#2a8b68',
-                            700: '#226f55',
-                            800: '#1e5845',
-                            900: '#1b493b',
-                            950: '#07251c',
+                        bhagwa: {
+                            50: '#fff7ed',   // Warm saffron mist
+                            100: '#ffedd5',  // Sandalwood cream
+                            200: '#fed7aa',  // Light kesari
+                            300: '#fdba74',  // Saffron gold
+                            400: '#fb923c',  // Bright kesar
+                            500: '#f97316',  // Pure Bhagwa
+                            600: '#ea580c',  // Deep sacred Saffron
+                            700: '#c2410c',  // Gerua / Vedic terracotta
+                            800: '#9a3412',  // Temple vermilion
+                            900: '#7c2d12',  // Dark Rudraksha
+                            950: '#431407',  // Deep sacred mahogany
                         },
-                        gold: {
-                            50: '#fffbeb',
+                        kesar: {
+                            50: '#fffbf0',
                             100: '#fef3c7',
                             200: '#fde68a',
                             300: '#fcd34d',
@@ -38,9 +38,9 @@
                         },
                         ivory: {
                             50: '#fdfcf9',
-                            100: '#faf7f2',
-                            200: '#f4ede2',
-                            300: '#ebe1ce',
+                            100: '#fcf9f2',
+                            200: '#f7f0e3',
+                            300: '#ede1cd',
                         }
                     },
                     fontFamily: {
@@ -53,7 +53,7 @@
             }
         }
     </script>
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome 6 for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Google Fonts: Plus Jakarta Sans, Playfair Display, Rozha One, Cinzel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,47 +62,69 @@
     <style>
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #FAF8F5;
-            color: #2D3748;
+            background-color: #FAF5EB;
+            color: #2D241E;
+        }
+        .shimmer-bhagwa {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
         }
         .shimmer-gold {
             background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%);
         }
-        .gradient-dark-vedic {
-            background: linear-gradient(180deg, #07251c 0%, #0a3327 50%, #051b14 100%);
+        .gradient-dark-bhagwa {
+            background: linear-gradient(180deg, #3B1106 0%, #240802 100%);
         }
-        .gold-border-glow {
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.18);
+        .bhagwa-glow {
+            box-shadow: 0 0 25px rgba(234, 88, 12, 0.22);
         }
-        .royal-card-hover {
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        .clean-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .royal-card-hover:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 30px -10px rgba(7, 37, 28, 0.12);
+        .clean-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 35px -8px rgba(154, 52, 18, 0.12);
+            border-color: #FDBA74;
         }
     </style>
 </head>
-<body class="bg-[#FAF8F5] text-gray-800 antialiased selection:bg-gold-500 selection:text-white">
+<body class="bg-[#FAF5EB] text-gray-900 antialiased selection:bg-bhagwa-600 selection:text-white">
 
-    <!-- Top Auspicious Bar (Tax Benefit & Sacred Mantra) -->
-    <div class="bg-[#051B14] text-gold-200 text-xs py-2.5 px-4 border-b border-gold-600/30">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-            <div class="flex items-center space-x-2 text-center sm:text-left">
-                <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-gold-500/20 text-gold-300 border border-gold-500/40 uppercase tracking-wider">
-                    <i class="fa-solid fa-certificate mr-1 text-gold-400"></i> 80G Tax Exemption
+    <!-- Top Auspicious Ribbon (Bhagwa Tradition & 80G Tax Exemption) -->
+    <div class="bg-[#240802] text-kesar-200 text-xs py-2 px-4 border-b border-bhagwa-600/30 relative z-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2.5">
+            <!-- Left: Tax Exemption + Sanskrit Shloka -->
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2.5 text-center">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10.5px] font-extrabold bg-gradient-to-r from-bhagwa-500/25 to-kesar-500/20 text-kesar-300 border border-kesar-400/40 uppercase tracking-wider shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-bhagwa-400 mr-1.5 animate-pulse"></span>
+                    80G Tax Exemption
                 </span>
-                <span class="text-gray-300 hidden md:inline">|</span>
-                <span class="font-devanagari text-gold-300 tracking-wide text-sm font-normal">॥ गावो विश्वस्य मातरः ॥</span>
-                <span class="text-gray-400 hidden lg:inline">— Cows are the Mothers of the Universe</span>
+                <span class="text-kesar-600/50 hidden sm:inline">•</span>
+                <span class="font-devanagari text-kesar-300 tracking-wide text-sm font-semibold">॥ गावो विश्वस्य मातरः ॥</span>
+                <span class="text-gray-300 hidden lg:inline text-[11.5px]">— Sacred Haven for 500+ Gau Vanshs in Mathura Dham</span>
             </div>
-            <div class="flex items-center space-x-5 text-xs font-medium">
-                <a href="tel:+919876543210" class="hover:text-white transition flex items-center space-x-1.5 text-gray-300">
-                    <i class="fa-solid fa-phone text-gold-400"></i>
-                    <span>+91 98765 43210</span>
+
+            <!-- Right: 24/7 Helpline & Live WhatsApp -->
+            <div class="flex items-center space-x-4 sm:space-x-5 text-xs font-semibold">
+                <!-- Gau Darshan Timings -->
+                <div class="hidden xl:flex items-center space-x-1.5 text-kesar-200/90 text-[11.5px]">
+                    <i class="fa-regular fa-clock text-kesar-400"></i>
+                    <span>Darshan: 6:30 AM – 7:30 PM</span>
+                </div>
+                <span class="text-kesar-600/50 hidden xl:inline">•</span>
+                <!-- 24/7 Rescue Phone -->
+                <a href="tel:+919876543210" class="hover:text-kesar-300 transition-colors flex items-center space-x-1.5 text-gray-200">
+                    <div class="w-5 h-5 rounded-full bg-bhagwa-500/30 flex items-center justify-center text-kesar-400 text-[10px]">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span>Rescue: +91 98765 43210</span>
                 </a>
-                <span class="text-gray-600">|</span>
-                <a href="https://wa.me/919876543210" target="_blank" class="hover:text-white transition flex items-center space-x-1.5 text-emerald-400 font-semibold">
+                <span class="text-kesar-600/50">•</span>
+                <!-- Live WhatsApp -->
+                <a href="https://wa.me/919876543210" target="_blank" class="hover:text-white transition-colors flex items-center space-x-1.5 text-emerald-400 font-bold">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
                     <i class="fa-brands fa-whatsapp text-sm"></i>
                     <span>WhatsApp Seva</span>
                 </a>
@@ -110,158 +132,191 @@
         </div>
     </div>
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#EBE4D8] shadow-sm transition-all duration-300">
+    <!-- Header / Navbar (Clean, Premium, Short Menu Names) -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-[#EEDFCB] shadow-[0_4px_30px_-5px_rgba(154,52,18,0.06)] transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Trust Brand Logo -->
-                <a href="#home" class="flex items-center space-x-3.5 group">
-                    <div class="w-13 h-13 p-2.5 bg-gradient-to-br from-vedic-900 via-vedic-800 to-[#041a13] rounded-2xl flex items-center justify-center text-gold-400 shadow-md border border-gold-500/30 group-hover:scale-105 transition-transform duration-300">
-                        <i class="fa-solid fa-cow text-2xl text-gold-400"></i>
+                <!-- Brand Emblem & Logo -->
+                <a href="#home" class="flex items-center space-x-3.5 group select-none py-1">
+                    <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl p-0.5 bg-gradient-to-tr from-bhagwa-600 via-kesar-400 to-bhagwa-700 shadow-md group-hover:shadow-bhagwa-500/30 transition-shadow duration-300 shrink-0">
+                        <div class="w-full h-full bg-gradient-to-br from-bhagwa-900 via-[#350E04] to-[#1E0501] rounded-[14px] flex items-center justify-center text-kesar-400 border border-kesar-500/40">
+                            <i class="fa-solid fa-cow text-2xl text-kesar-400 transform group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
                     </div>
                     <div>
-                        <span class="text-xl font-bold tracking-tight text-vedic-950 font-serif leading-none block group-hover:text-vedic-700 transition">
-                            Shree Gau Seva Dham
-                        </span>
-                        <div class="flex items-center space-x-1.5 mt-1">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
-                            <span class="text-[11px] font-semibold uppercase tracking-wider text-gold-700">Regd. Public Charitable Trust</span>
+                        <div class="flex items-center space-x-1.5">
+                            <span class="text-xl sm:text-2xl font-black tracking-tight text-bhagwa-950 font-serif leading-none group-hover:text-bhagwa-600 transition-colors">
+                                Shree Gau Seva Dham
+                            </span>
+                        </div>
+                        <div class="flex items-center space-x-2 mt-1">
+                            <span class="text-[10.5px] font-devanagari font-bold text-bhagwa-700 tracking-wide">॥ रक्षा • सेवा • संवर्धन ॥</span>
+                            <span class="w-1 h-1 rounded-full bg-bhagwa-400 hidden sm:inline-block"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-500 hidden sm:inline-block">Regd. 80G Trust</span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links (Short, Clean, Compact) -->
-                <nav class="hidden xl:flex items-center space-x-3 text-sm font-semibold text-gray-700">
-                    <a href="#home" class="px-3.5 py-1.5 rounded-full text-vedic-950 font-bold bg-gold-50/90 border border-gold-300/60 shadow-xs">
+                <!-- Desktop Navigation Links (Short, Clean, Compact as Requested) -->
+                <nav class="hidden xl:flex items-center space-x-2 text-sm font-semibold text-gray-700">
+                    <a href="#home" class="px-3.5 py-1.5 rounded-full text-bhagwa-900 font-bold bg-bhagwa-100/80 border border-bhagwa-300/60 shadow-xs">
                         Home
                     </a>
-                    <a href="#about" class="px-3 py-1.5 rounded-full hover:text-vedic-950 hover:bg-gold-50/80 transition">
+                    <a href="#about" class="px-3.5 py-1.5 rounded-full hover:text-bhagwa-900 hover:bg-bhagwa-50 transition">
                         About
                     </a>
-                    <a href="#services" class="px-3 py-1.5 rounded-full hover:text-vedic-950 hover:bg-gold-50/80 transition">
+                    <a href="#services" class="px-3.5 py-1.5 rounded-full hover:text-bhagwa-900 hover:bg-bhagwa-50 transition">
                         Seva
                     </a>
-                    <a href="#gaushala" class="px-3 py-1.5 rounded-full hover:text-vedic-950 hover:bg-gold-50/80 transition">
+                    <a href="#gaushala" class="px-3.5 py-1.5 rounded-full hover:text-bhagwa-900 hover:bg-bhagwa-50 transition">
                         Gaushala
                     </a>
-                    <a href="#gallery" class="px-3 py-1.5 rounded-full hover:text-vedic-950 hover:bg-gold-50/80 transition">
+                    <a href="#gallery" class="px-3.5 py-1.5 rounded-full hover:text-bhagwa-900 hover:bg-bhagwa-50 transition">
                         Gallery
                     </a>
-                    <a href="#plans" class="px-3 py-1.5 rounded-full hover:text-vedic-950 hover:bg-gold-50/80 transition">
+                    <a href="#plans" class="px-3.5 py-1.5 rounded-full hover:text-bhagwa-900 hover:bg-bhagwa-50 transition">
                         Plans
                     </a>
-                    <a href="#testimonials" class="px-3 py-1.5 rounded-full hover:text-vedic-950 hover:bg-gold-50/80 transition">
+                    <a href="#testimonials" class="px-3.5 py-1.5 rounded-full hover:text-bhagwa-900 hover:bg-bhagwa-50 transition">
                         Reviews
                     </a>
-                    <a href="#contact" class="px-3 py-1.5 rounded-full hover:text-vedic-950 hover:bg-gold-50/80 transition">
+                    <a href="#contact" class="px-3.5 py-1.5 rounded-full hover:text-bhagwa-900 hover:bg-bhagwa-50 transition">
                         Contact
                     </a>
                 </nav>
 
-                <!-- Action Button -->
+                <!-- Action Button (Bhagwa Glowing CTA) -->
                 <div class="hidden sm:flex items-center space-x-3">
-                    <a href="#donations" class="shimmer-gold hover:opacity-95 text-vedic-950 font-bold px-6 py-2.5 rounded-full shadow-md shadow-gold-500/25 flex items-center space-x-2 transition transform hover:-translate-y-0.5 border border-gold-300">
-                        <i class="fa-solid fa-heart text-red-700 text-sm"></i>
+                    <a href="#donations" class="shimmer-bhagwa hover:opacity-95 text-white font-extrabold px-6 py-2.5 rounded-full shadow-lg shadow-bhagwa-600/30 flex items-center space-x-2 transition transform hover:-translate-y-0.5 border border-kesar-300 text-sm">
+                        <i class="fa-solid fa-heart text-kesar-200 text-sm animate-pulse"></i>
                         <span>Donate</span>
+                        <span class="bg-black/20 text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">80G</span>
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="xl:hidden flex items-center">
-                    <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="text-vedic-900 hover:text-gold-600 focus:outline-none p-2 rounded-lg bg-ivory-100 border border-[#E5DCce]">
-                        <i class="fa-solid fa-bars text-xl"></i>
+                <div class="xl:hidden flex items-center space-x-2">
+                    <a href="#donations" class="sm:hidden px-3.5 py-1.5 rounded-full text-xs font-black text-white shimmer-bhagwa border border-kesar-300 shadow-sm flex items-center space-x-1">
+                        <i class="fa-solid fa-heart text-kesar-200 text-[10px]"></i>
+                        <span>Donate</span>
+                    </a>
+                    <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="w-10 h-10 rounded-xl bg-bhagwa-50 border border-bhagwa-200 text-bhagwa-900 hover:bg-bhagwa-100 flex items-center justify-center transition-colors focus:outline-none">
+                        <i id="menu-icon" class="fa-solid fa-bars text-lg text-bhagwa-900"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown (Short Clean Grid) -->
-        <div id="mobile-menu" class="hidden xl:hidden bg-white/98 border-b border-[#E8DFD1] px-5 pt-3 pb-6 shadow-xl">
+        <!-- Mobile Menu Dropdown (Compact 2-Column Grid) -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-white/98 backdrop-blur-2xl border-b border-[#EEDFCB] px-5 pt-3 pb-6 shadow-2xl transition-all duration-300">
+            <div class="bg-gradient-to-r from-bhagwa-50 via-white to-bhagwa-50 border border-bhagwa-200 rounded-2xl p-3 mb-3 flex items-center justify-between">
+                <div class="flex items-center space-x-2.5">
+                    <div class="w-8 h-8 rounded-lg bg-bhagwa-800 text-kesar-300 flex items-center justify-center text-sm font-bold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-gray-900 block leading-tight">80G Approved Trust</span>
+                        <span class="text-[11px] text-gray-500">Reg. Mathura, UP</span>
+                    </div>
+                </div>
+                <a href="tel:+919876543210" class="bg-bhagwa-800 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center space-x-1">
+                    <i class="fa-solid fa-phone text-[10px] text-kesar-300"></i>
+                    <span>Call 24x7</span>
+                </a>
+            </div>
+
+            <!-- Mobile Navigation Links Grid -->
             <div class="grid grid-cols-2 gap-2 text-xs font-bold text-gray-800">
-                <a href="#home" class="p-2.5 bg-gray-50 rounded-xl hover:bg-gold-50 hover:text-gold-900 transition flex items-center space-x-2 border border-gray-100">
-                    <i class="fa-solid fa-house text-gold-600 text-xs"></i>
+                <a href="#home" class="p-2.5 bg-gray-50 rounded-xl hover:bg-bhagwa-50 hover:text-bhagwa-900 transition flex items-center space-x-2 border border-gray-100">
+                    <i class="fa-solid fa-house text-bhagwa-600 text-xs"></i>
                     <span>Home</span>
                 </a>
-                <a href="#about" class="p-2.5 bg-gray-50 rounded-xl hover:bg-gold-50 hover:text-gold-900 transition flex items-center space-x-2 border border-gray-100">
-                    <i class="fa-solid fa-circle-info text-gold-600 text-xs"></i>
+                <a href="#about" class="p-2.5 bg-gray-50 rounded-xl hover:bg-bhagwa-50 hover:text-bhagwa-900 transition flex items-center space-x-2 border border-gray-100">
+                    <i class="fa-solid fa-circle-info text-bhagwa-600 text-xs"></i>
                     <span>About</span>
                 </a>
-                <a href="#services" class="p-2.5 bg-gray-50 rounded-xl hover:bg-gold-50 hover:text-gold-900 transition flex items-center space-x-2 border border-gray-100">
-                    <i class="fa-solid fa-hand-holding-heart text-emerald-600 text-xs"></i>
+                <a href="#services" class="p-2.5 bg-gray-50 rounded-xl hover:bg-bhagwa-50 hover:text-bhagwa-900 transition flex items-center space-x-2 border border-gray-100">
+                    <i class="fa-solid fa-hand-holding-heart text-bhagwa-600 text-xs"></i>
                     <span>Seva</span>
                 </a>
-                <a href="#gaushala" class="p-2.5 bg-gray-50 rounded-xl hover:bg-gold-50 hover:text-gold-900 transition flex items-center space-x-2 border border-gray-100">
-                    <i class="fa-solid fa-cow text-emerald-600 text-xs"></i>
+                <a href="#gaushala" class="p-2.5 bg-gray-50 rounded-xl hover:bg-bhagwa-50 hover:text-bhagwa-900 transition flex items-center space-x-2 border border-gray-100">
+                    <i class="fa-solid fa-cow text-bhagwa-600 text-xs"></i>
                     <span>Gaushala</span>
                 </a>
-                <a href="#gallery" class="p-2.5 bg-gray-50 rounded-xl hover:bg-gold-50 hover:text-gold-900 transition flex items-center space-x-2 border border-gray-100">
-                    <i class="fa-solid fa-images text-gold-600 text-xs"></i>
+                <a href="#gallery" class="p-2.5 bg-gray-50 rounded-xl hover:bg-bhagwa-50 hover:text-bhagwa-900 transition flex items-center space-x-2 border border-gray-100">
+                    <i class="fa-solid fa-images text-bhagwa-600 text-xs"></i>
                     <span>Gallery</span>
                 </a>
-                <a href="#plans" class="p-2.5 bg-gray-50 rounded-xl hover:bg-gold-50 hover:text-gold-900 transition flex items-center space-x-2 border border-gray-100">
-                    <i class="fa-solid fa-star text-gold-600 text-xs"></i>
+                <a href="#plans" class="p-2.5 bg-gray-50 rounded-xl hover:bg-bhagwa-50 hover:text-bhagwa-900 transition flex items-center space-x-2 border border-gray-100">
+                    <i class="fa-solid fa-star text-bhagwa-600 text-xs"></i>
                     <span>Plans</span>
                 </a>
-                <a href="#testimonials" class="p-2.5 bg-gray-50 rounded-xl hover:bg-gold-50 hover:text-gold-900 transition flex items-center space-x-2 border border-gray-100">
-                    <i class="fa-solid fa-comments text-gold-600 text-xs"></i>
+                <a href="#testimonials" class="p-2.5 bg-gray-50 rounded-xl hover:bg-bhagwa-50 hover:text-bhagwa-900 transition flex items-center space-x-2 border border-gray-100">
+                    <i class="fa-solid fa-comments text-bhagwa-600 text-xs"></i>
                     <span>Reviews</span>
                 </a>
-                <a href="#contact" class="p-2.5 bg-gray-50 rounded-xl hover:bg-gold-50 hover:text-gold-900 transition flex items-center space-x-2 border border-gray-100">
-                    <i class="fa-solid fa-phone text-gold-600 text-xs"></i>
+                <a href="#contact" class="p-2.5 bg-gray-50 rounded-xl hover:bg-bhagwa-50 hover:text-bhagwa-900 transition flex items-center space-x-2 border border-gray-100">
+                    <i class="fa-solid fa-phone text-bhagwa-600 text-xs"></i>
                     <span>Contact</span>
                 </a>
             </div>
-            <div class="pt-3">
-                <a href="#donations" class="w-full text-center shimmer-gold text-vedic-950 font-bold px-5 py-3 rounded-xl shadow-md flex items-center justify-center space-x-2 border border-gold-300">
-                    <i class="fa-solid fa-heart text-red-700"></i>
-                    <span>Donate Now (80G Tax Free)</span>
+
+            <!-- WhatsApp & Donate Bottom Actions -->
+            <div class="pt-3 space-y-2">
+                <a href="#donations" class="w-full text-center shimmer-bhagwa text-white font-extrabold py-3.5 px-5 rounded-2xl shadow-lg flex items-center justify-center space-x-2 border border-kesar-300 text-sm">
+                    <i class="fa-solid fa-hand-holding-heart text-kesar-200 text-base"></i>
+                    <span>Donate Now (50% Tax Exemption 80G)</span>
+                </a>
+                <a href="https://wa.me/919876543210" target="_blank" class="w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-2 text-xs transition">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Chat on WhatsApp for Gau Seva</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section (Royal Vedic Ambience) -->
-    <section id="home" class="relative bg-[#062117] text-white overflow-hidden min-h-[660px] flex items-center">
-        <!-- Live Verified High-Res Holy Cow Image with Premium Gradient Overlay -->
+    <!-- Hero Section (Vedic Bhagwa Ambience with 4K Quality Desi Cow Image) -->
+    <section id="home" class="relative bg-[#200601] text-white overflow-hidden min-h-[680px] flex items-center">
+        <!-- Ultra 4K Quality Sacred Desi Cow Image with Deep Saffron & Mahogany Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=1920&q=85" 
-                 alt="Holy Desi Cow in Sanctuary" 
-                 class="w-full h-full object-cover object-center opacity-30 scale-105 transition-transform duration-1000">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#051B14] via-[#07251C]/90 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#062117] via-transparent to-transparent"></div>
+            <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=2400" 
+                 alt="Pavitra Desi Cow with Sacred Tilak in Braj Dham" 
+                 class="w-full h-full object-cover object-center opacity-35 scale-105 transition-transform duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#2A0A02] via-[#350E04]/90 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#200601] via-transparent to-transparent"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <!-- Left Content -->
                 <div class="lg:col-span-8 space-y-7">
-                    <!-- Badge -->
-                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-gold-500/20 to-vedic-800/40 border border-gold-400/40 text-gold-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full backdrop-blur-md shadow-sm">
-                        <i class="fa-solid fa-om text-gold-400"></i>
-                        <span>A Sacred Haven for 500+ Gau Vanshs</span>
+                    <!-- Auspicious Bhagwa Badge -->
+                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-bhagwa-600/30 to-kesar-500/20 border border-kesar-400/40 text-kesar-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full backdrop-blur-md shadow-sm">
+                        <i class="fa-solid fa-om text-kesar-400"></i>
+                        <span>पवित्र गौ सेवा धाम • 500+ निराश्रित गौवंशों का आश्रय</span>
                     </div>
 
-                    <!-- Heading with Royal Typography -->
+                    <!-- Heading with Royal Typography in Saffron Gold -->
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-serif leading-[1.15]">
                         गोमाता की सेवा, <br>
-                        <span class="bg-gradient-to-r from-gold-300 via-gold-400 to-amber-200 bg-clip-text text-transparent">
-                            सनातन धर्म की रक्षा
+                        <span class="bg-gradient-to-r from-kesar-300 via-bhagwa-300 to-amber-200 bg-clip-text text-transparent">
+                            सनातन संस्कृति की रक्षा
                         </span>
                     </h1>
 
                     <!-- Description -->
                     <p class="text-base sm:text-lg text-gray-200 max-w-2xl font-light leading-relaxed">
-                        Shree Gau Seva Dham is a dedicated non-profit charitable trust serving destitute, injured, sick, and retired cows in Mathura-Vrindavan. We provide 24/7 medical hospital care, nutritious green fodder, and a lifelong sanctuary filled with love and dignity.
+                        Shree Gau Seva Dham is a dedicated non-profit charitable trust serving destitute, injured, sick, and retired cows in Mathura-Vrindavan. We provide 24/7 medical hospital care, nutritious green fodder, and a lifelong sanctuary filled with love, dignity, and Vedic reverence.
                     </p>
 
                     <!-- CTAs -->
                     <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#donations" class="shimmer-gold hover:opacity-95 text-vedic-950 font-bold px-8 py-4 rounded-full shadow-lg shadow-gold-500/30 flex items-center space-x-3 transition transform hover:-translate-y-1 border border-gold-300">
-                            <i class="fa-solid fa-hand-holding-dollar text-red-800 text-lg"></i>
+                        <a href="#donations" class="shimmer-bhagwa hover:opacity-95 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-bhagwa-600/40 flex items-center space-x-3 transition transform hover:-translate-y-1 border border-kesar-300 text-base">
+                            <i class="fa-solid fa-hand-holding-dollar text-kesar-200 text-lg"></i>
                             <span>Sponsor Cow Fodder (₹500)</span>
                         </a>
-                        <a href="#gallery" class="bg-white/10 hover:bg-white/20 border border-gold-400/40 text-white font-medium px-7 py-4 rounded-full backdrop-blur-md transition flex items-center space-x-2">
-                            <i class="fa-solid fa-camera text-gold-300"></i>
+                        <a href="#gallery" class="bg-white/10 hover:bg-white/20 border border-kesar-400/40 text-white font-medium px-7 py-4 rounded-full backdrop-blur-md transition flex items-center space-x-2">
+                            <i class="fa-solid fa-camera text-kesar-300"></i>
                             <span>Daily Gaushala Darshan</span>
                         </a>
                     </div>
@@ -269,42 +324,42 @@
                     <!-- Trust Seals / Badges -->
                     <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-gray-300 border-t border-white/10">
                         <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-shield-halved text-gold-400 text-base"></i>
+                            <i class="fa-solid fa-shield-halved text-kesar-400 text-base"></i>
                             <span>100% Tax Exempt (Sec 80G)</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-stethoscope text-emerald-400 text-base"></i>
-                            <span>In-house ICU & Vets</span>
+                            <i class="fa-solid fa-stethoscope text-bhagwa-300 text-base"></i>
+                            <span>In-house ICU & Expert Vets</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-file-invoice text-gold-400 text-base"></i>
+                            <i class="fa-solid fa-file-invoice text-kesar-400 text-base"></i>
                             <span>Instant Digital Receipt</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Sanctum Card -->
+                <!-- Right Sanctum Card in Rich Bhagwa-Mahogany -->
                 <div class="lg:col-span-4 hidden lg:flex justify-end">
-                    <div class="bg-gradient-to-b from-[#0e3b2c]/90 to-[#07241b]/95 backdrop-blur-xl border border-gold-500/35 p-7 rounded-3xl shadow-2xl text-center max-w-sm gold-border-glow">
-                        <div class="w-16 h-16 bg-gradient-to-tr from-gold-600 to-gold-400 text-vedic-950 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-lg font-bold">
+                    <div class="bg-gradient-to-b from-[#4A1407]/90 to-[#2A0A02]/95 backdrop-blur-xl border border-kesar-500/40 p-7 rounded-3xl shadow-2xl text-center max-w-sm bhagwa-glow">
+                        <div class="w-16 h-16 bg-gradient-to-tr from-bhagwa-600 to-kesar-400 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-lg font-bold border border-kesar-300/40">
                             <i class="fa-solid fa-hands-praying"></i>
                         </div>
-                        <span class="text-xs uppercase tracking-widest text-gold-300 font-bold block mb-1 font-royal">Pavitra Shloka</span>
+                        <span class="text-xs uppercase tracking-widest text-kesar-300 font-bold block mb-1 font-royal">Pavitra Shloka</span>
                         <p class="text-white text-lg font-serif italic leading-snug">
                             "गौ सेवा ही सच्ची सेवा है, जहाँ गाय प्रसन्न होती है वहाँ समस्त देव वास करते हैं।"
                         </p>
-                        <div class="my-4 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent"></div>
-                        <div class="bg-black/30 p-3.5 rounded-xl border border-gold-500/20 text-left space-y-1">
-                            <div class="flex justify-between text-xs text-gray-300">
+                        <div class="my-4 h-px bg-gradient-to-r from-transparent via-kesar-500/50 to-transparent"></div>
+                        <div class="bg-black/40 p-3.5 rounded-xl border border-kesar-500/20 text-left space-y-1">
+                            <div class="flex justify-between text-xs text-gray-200">
                                 <span>Today's Fodder Needed:</span>
-                                <span class="text-gold-300 font-bold">3,500 Kg</span>
+                                <span class="text-kesar-300 font-bold">3,500 Kg</span>
                             </div>
                             <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                                <div class="bg-gradient-to-r from-emerald-500 to-gold-400 h-full w-[72%]"></div>
+                                <div class="bg-gradient-to-r from-bhagwa-500 to-kesar-400 h-full w-[72%]"></div>
                             </div>
-                            <span class="text-[10px] text-gray-400 block text-right">72% Fodder Sponsored Today</span>
+                            <span class="text-[10px] text-gray-300 block text-right">72% Fodder Sponsored Today</span>
                         </div>
-                        <a href="#donations" class="mt-4 inline-block w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-gold-500/20 hover:bg-gold-500/30 text-gold-300 border border-gold-500/40 transition">
+                        <a href="#donations" class="mt-4 inline-block w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-bhagwa-500/20 hover:bg-bhagwa-500/30 text-kesar-300 border border-kesar-500/40 transition">
                             Contribute Today's Fodder &rarr;
                         </a>
                     </div>
@@ -313,61 +368,61 @@
         </div>
     </section>
 
-    <!-- Stats Ribbon with Rich Gold Highlights -->
-    <section class="bg-gradient-to-r from-[#07251C] via-[#0B3B2B] to-[#07251C] text-white py-10 border-y border-gold-500/30">
+    <!-- Stats Ribbon in Rich Saffron & Vermilion -->
+    <section class="bg-gradient-to-r from-[#2E0B03] via-[#4A1507] to-[#2E0B03] text-white py-10 border-y border-bhagwa-500/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-gold-500/20">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-bhagwa-500/20">
                 <div class="pt-4 sm:pt-0 space-y-1.5">
-                    <div class="text-gold-400 text-3xl">
+                    <div class="text-kesar-400 text-3xl">
                         <i class="fa-solid fa-cow"></i>
                     </div>
                     <div class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-serif">500+</div>
-                    <div class="text-gold-200 text-xs sm:text-sm font-medium uppercase tracking-wider">Desi Cows Protected</div>
+                    <div class="text-kesar-200 text-xs sm:text-sm font-medium uppercase tracking-wider">Desi Cows Protected</div>
                 </div>
 
                 <div class="pt-4 sm:pt-0 space-y-1.5">
-                    <div class="text-gold-400 text-3xl">
+                    <div class="text-kesar-400 text-3xl">
                         <i class="fa-solid fa-truck-medical"></i>
                     </div>
                     <div class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-serif">24 / 7</div>
-                    <div class="text-gold-200 text-xs sm:text-sm font-medium uppercase tracking-wider">Ambulance & Hospital</div>
+                    <div class="text-kesar-200 text-xs sm:text-sm font-medium uppercase tracking-wider">Ambulance & Hospital</div>
                 </div>
 
                 <div class="pt-4 sm:pt-0 space-y-1.5">
-                    <div class="text-gold-400 text-3xl">
+                    <div class="text-kesar-400 text-3xl">
                         <i class="fa-solid fa-hand-holding-heart"></i>
                     </div>
                     <div class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-serif">1,200+</div>
-                    <div class="text-gold-200 text-xs sm:text-sm font-medium uppercase tracking-wider">Lives Rescued & Healed</div>
+                    <div class="text-kesar-200 text-xs sm:text-sm font-medium uppercase tracking-wider">Lives Rescued & Healed</div>
                 </div>
 
                 <div class="pt-4 sm:pt-0 space-y-1.5">
-                    <div class="text-gold-400 text-3xl">
+                    <div class="text-kesar-400 text-3xl">
                         <i class="fa-solid fa-award"></i>
                     </div>
                     <div class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-serif">15+</div>
-                    <div class="text-gold-200 text-xs sm:text-sm font-medium uppercase tracking-wider">Years of Selfless Seva</div>
+                    <div class="text-kesar-200 text-xs sm:text-sm font-medium uppercase tracking-wider">Years of Selfless Seva</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-24 bg-[#FAF8F5]">
+    <!-- About Us Section (Pure Sandalwood Ivory & Authentic Desi Gomata 4K Image) -->
+    <section id="about" class="py-24 bg-[#FAF5EB]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
-                <!-- Left: Live Verified Indian Cow Image with Layered Card Design -->
+                <!-- Left: 4K Verified Sacred Gomata Image -->
                 <div class="lg:col-span-6">
                     <div class="relative">
-                        <!-- Decorative Gold Accent Frame -->
-                        <div class="absolute -inset-3 bg-gradient-to-tr from-gold-400/40 to-vedic-200 rounded-3xl transform -rotate-1"></div>
-                        <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=1000" 
+                        <!-- Decorative Bhagwa Accent Frame -->
+                        <div class="absolute -inset-3 bg-gradient-to-tr from-bhagwa-400/40 to-kesar-300/40 rounded-3xl transform -rotate-1"></div>
+                        <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=1600&q=95" 
                              alt="Sacred Indian Desi Cow at Gaushala" 
                              class="relative rounded-2xl shadow-2xl w-full h-[460px] object-cover border-4 border-white">
                         
                         <!-- Floating Highlight Pill -->
-                        <div class="absolute -bottom-6 -right-3 sm:right-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gold-300 max-w-xs flex items-center space-x-3.5">
-                            <div class="w-12 h-12 bg-vedic-100 text-vedic-800 rounded-xl flex items-center justify-center shrink-0 text-xl font-bold">
+                        <div class="absolute -bottom-6 -right-3 sm:right-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-kesar-300 max-w-xs flex items-center space-x-3.5">
+                            <div class="w-12 h-12 bg-bhagwa-100 text-bhagwa-800 rounded-xl flex items-center justify-center shrink-0 text-xl font-bold">
                                 <i class="fa-solid fa-heart-pulse text-red-600"></i>
                             </div>
                             <div>
@@ -381,16 +436,16 @@
                 <!-- Right: Content -->
                 <div class="lg:col-span-6 space-y-6">
                     <div>
-                        <span class="text-vedic-800 font-bold text-xs uppercase tracking-widest bg-gold-100 text-gold-900 px-3.5 py-1.5 rounded-full border border-gold-300">
+                        <span class="text-bhagwa-900 font-bold text-xs uppercase tracking-widest bg-bhagwa-100 px-3.5 py-1.5 rounded-full border border-bhagwa-300">
                             About Shree Gau Seva Dham
                         </span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-vedic-950 font-serif mt-3 leading-tight">
-                            A Lifelong Sanctuary Built on Devotion & Compassion
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-bhagwa-950 font-serif mt-3 leading-tight">
+                            A Lifelong Sanctuary Built on Devotion & Vedic Compassion
                         </h2>
                     </div>
 
                     <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
-                        In Indian culture, the cow is revered as Gomata—a mother and symbol of unconditional nurturing. Shree Gau Seva Dham was established to give helpless, non-milking, injured, and abandoned cows an honorable, loving home.
+                        In Indian tradition, Gomata is revered as the mother of the universe—a divine symbol of selflessness, purity, and nourishment. Shree Gau Seva Dham was established to give helpless, non-milking, injured, and abandoned cows an honorable, loving home.
                     </p>
 
                     <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -399,8 +454,8 @@
 
                     <!-- 4 Feature Pillars Grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div class="flex items-start space-x-3 p-4 bg-white rounded-xl border border-[#E9DFCF] shadow-sm">
-                            <div class="w-10 h-10 bg-vedic-100 text-vedic-800 rounded-lg flex items-center justify-center shrink-0">
+                        <div class="flex items-start space-x-3 p-4 bg-white rounded-xl border border-[#EEDFCB] shadow-sm">
+                            <div class="w-10 h-10 bg-bhagwa-100 text-bhagwa-800 rounded-lg flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-shield-dog text-base"></i>
                             </div>
                             <div>
@@ -409,8 +464,8 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-3 p-4 bg-white rounded-xl border border-[#E9DFCF] shadow-sm">
-                            <div class="w-10 h-10 bg-vedic-100 text-vedic-800 rounded-lg flex items-center justify-center shrink-0">
+                        <div class="flex items-start space-x-3 p-4 bg-white rounded-xl border border-[#EEDFCB] shadow-sm">
+                            <div class="w-10 h-10 bg-bhagwa-100 text-bhagwa-800 rounded-lg flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-bowl-food text-base"></i>
                             </div>
                             <div>
@@ -419,8 +474,8 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-3 p-4 bg-white rounded-xl border border-[#E9DFCF] shadow-sm">
-                            <div class="w-10 h-10 bg-vedic-100 text-vedic-800 rounded-lg flex items-center justify-center shrink-0">
+                        <div class="flex items-start space-x-3 p-4 bg-white rounded-xl border border-[#EEDFCB] shadow-sm">
+                            <div class="w-10 h-10 bg-bhagwa-100 text-bhagwa-800 rounded-lg flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-house-chimney text-base"></i>
                             </div>
                             <div>
@@ -429,9 +484,9 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-3 p-4 bg-white rounded-xl border border-[#E9DFCF] shadow-sm">
-                            <div class="w-10 h-10 bg-vedic-100 text-vedic-800 rounded-lg flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-sun text-base text-gold-600"></i>
+                        <div class="flex items-start space-x-3 p-4 bg-white rounded-xl border border-[#EEDFCB] shadow-sm">
+                            <div class="w-10 h-10 bg-bhagwa-100 text-bhagwa-800 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-sun text-base text-kesar-600"></i>
                             </div>
                             <div>
                                 <h3 class="font-bold text-gray-900 text-sm">Gau Puja & Darshan</h3>
@@ -441,11 +496,11 @@
                     </div>
 
                     <div class="pt-4 flex flex-wrap gap-4">
-                        <a href="#gaushala" class="inline-flex items-center space-x-2 bg-vedic-900 hover:bg-vedic-950 text-white font-semibold px-7 py-3.5 rounded-full shadow-md transition">
+                        <a href="#gaushala" class="inline-flex items-center space-x-2 bg-bhagwa-900 hover:bg-bhagwa-950 text-white font-semibold px-7 py-3.5 rounded-full shadow-md transition">
                             <span>Explore Our Sanctuary</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
-                        <a href="#contact" class="inline-flex items-center space-x-2 border border-vedic-800 text-vedic-900 hover:bg-vedic-100 font-semibold px-6 py-3.5 rounded-full transition">
+                        <a href="#contact" class="inline-flex items-center space-x-2 border border-bhagwa-800 text-bhagwa-900 hover:bg-bhagwa-100 font-semibold px-6 py-3.5 rounded-full transition">
                             <span>Plan a Visit</span>
                         </a>
                     </div>
@@ -454,22 +509,22 @@
         </div>
     </section>
 
-    <!-- Services / What We Do Section -->
-    <section id="services" class="py-24 bg-white border-t border-[#EDE4D6]">
+    <!-- Services / What We Do Section (Clean White & Sandalwood Grid) -->
+    <section id="services" class="py-24 bg-white border-t border-[#EEDFCB]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="text-vedic-800 font-bold text-xs uppercase tracking-widest bg-gold-100 text-gold-900 px-3.5 py-1.5 rounded-full border border-gold-300">
+                <span class="text-bhagwa-900 font-bold text-xs uppercase tracking-widest bg-bhagwa-100 px-3.5 py-1.5 rounded-full border border-bhagwa-300">
                     Comprehensive Seva
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-vedic-950 font-serif">What We Do for Gomata</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bhagwa-950 font-serif">What We Do for Gomata</h2>
                 <p class="text-gray-600 text-base sm:text-lg">Every single service is executed with love, dignity, and religious adherence to Vedic traditions.</p>
             </div>
 
-            <!-- Services Grid (6 Premium Cards) -->
+            <!-- Services Grid (6 Clean Cards) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-[#FAF8F5] p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EBE2D4] group royal-card-hover">
-                    <div class="w-14 h-14 bg-vedic-100 text-vedic-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-vedic-900 group-hover:to-vedic-700 group-hover:text-gold-300 transition">
+                <div class="bg-[#FAF5EB] p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EEDFCB] group clean-card-hover">
+                    <div class="w-14 h-14 bg-bhagwa-100 text-bhagwa-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-bhagwa-600 group-hover:to-kesar-500 group-hover:text-white transition">
                         <i class="fa-solid fa-wheat-awn"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 font-serif">Daily Fodder & Nutrition</h3>
@@ -477,8 +532,8 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-[#FAF8F5] p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EBE2D4] group royal-card-hover">
-                    <div class="w-14 h-14 bg-vedic-100 text-vedic-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-vedic-900 group-hover:to-vedic-700 group-hover:text-gold-300 transition">
+                <div class="bg-[#FAF5EB] p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EEDFCB] group clean-card-hover">
+                    <div class="w-14 h-14 bg-bhagwa-100 text-bhagwa-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-bhagwa-600 group-hover:to-kesar-500 group-hover:text-white transition">
                         <i class="fa-solid fa-notes-medical"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 font-serif">Advanced Veterinary Care</h3>
@@ -486,8 +541,8 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-[#FAF8F5] p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EBE2D4] group royal-card-hover">
-                    <div class="w-14 h-14 bg-vedic-100 text-vedic-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-vedic-900 group-hover:to-vedic-700 group-hover:text-gold-300 transition">
+                <div class="bg-[#FAF5EB] p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EEDFCB] group clean-card-hover">
+                    <div class="w-14 h-14 bg-bhagwa-100 text-bhagwa-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-bhagwa-600 group-hover:to-kesar-500 group-hover:text-white transition">
                         <i class="fa-solid fa-ambulance"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 font-serif">24/7 Cattle Ambulance</h3>
@@ -495,8 +550,8 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="bg-[#FAF8F5] p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EBE2D4] group royal-card-hover">
-                    <div class="w-14 h-14 bg-vedic-100 text-vedic-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-vedic-900 group-hover:to-vedic-700 group-hover:text-gold-300 transition">
+                <div class="bg-[#FAF5EB] p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EEDFCB] group clean-card-hover">
+                    <div class="w-14 h-14 bg-bhagwa-100 text-bhagwa-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-bhagwa-600 group-hover:to-kesar-500 group-hover:text-white transition">
                         <i class="fa-solid fa-heart-pulse"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 font-serif">Special Care for Calves</h3>
@@ -504,8 +559,8 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="bg-[#FAF8F5] p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EBE2D4] group royal-card-hover">
-                    <div class="w-14 h-14 bg-vedic-100 text-vedic-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-vedic-900 group-hover:to-vedic-700 group-hover:text-gold-300 transition">
+                <div class="bg-[#FAF5EB] p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EEDFCB] group clean-card-hover">
+                    <div class="w-14 h-14 bg-bhagwa-100 text-bhagwa-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-bhagwa-600 group-hover:to-kesar-500 group-hover:text-white transition">
                         <i class="fa-solid fa-mountain-sun"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 font-serif">Open Pasture Grazing</h3>
@@ -513,8 +568,8 @@
                 </div>
 
                 <!-- Card 6 -->
-                <div class="bg-[#FAF8F5] p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EBE2D4] group royal-card-hover">
-                    <div class="w-14 h-14 bg-vedic-100 text-vedic-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-vedic-900 group-hover:to-vedic-700 group-hover:text-gold-300 transition">
+                <div class="bg-[#FAF5EB] p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EEDFCB] group clean-card-hover">
+                    <div class="w-14 h-14 bg-bhagwa-100 text-bhagwa-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gradient-to-tr group-hover:from-bhagwa-600 group-hover:to-kesar-500 group-hover:text-white transition">
                         <i class="fa-solid fa-om"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 font-serif">Gau Seva & Havan Yagya</h3>
@@ -524,20 +579,20 @@
         </div>
     </section>
 
-    <!-- Sanctuary & Philosophy Section -->
-    <section id="gaushala" class="py-24 bg-[#07251C] text-white relative overflow-hidden">
+    <!-- Sanctuary & Philosophy Section (Sacred Bhagwa & Mahogany) -->
+    <section id="gaushala" class="py-24 bg-[#350E04] text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- Left Live Verified Image of Grazing Herd -->
+                <!-- Left 4K Image of Grazing Herd -->
                 <div class="lg:col-span-6">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1000&q=80" 
-                             alt="Cows grazing peacefully in green sanctuary" 
-                             class="rounded-3xl shadow-2xl w-full h-[430px] object-cover border-2 border-gold-500/30">
+                        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Sahiwala_01.JPG/960px-Sahiwala_01.JPG" 
+                             alt="Desi cow resting peacefully in sanctuary" 
+                             class="rounded-3xl shadow-2xl w-full h-[430px] object-cover border-2 border-kesar-500/40">
                         
                         <!-- Secondary Inset Image of Calf -->
-                        <div class="absolute -bottom-6 -left-4 sm:left-4 w-40 sm:w-48 h-32 rounded-2xl overflow-hidden border-4 border-[#07251C] shadow-2xl hidden sm:block">
-                            <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&w=600&q=80" 
+                        <div class="absolute -bottom-6 -left-4 sm:left-4 w-40 sm:w-48 h-32 rounded-2xl overflow-hidden border-4 border-[#350E04] shadow-2xl hidden sm:block">
+                            <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&w=800&q=95" 
                                  alt="Baby calf in gaushala" 
                                  class="w-full h-full object-cover">
                         </div>
@@ -547,7 +602,7 @@
                 <!-- Right Content + Sacred Shloka -->
                 <div class="lg:col-span-6 space-y-6">
                     <div>
-                        <span class="text-gold-300 font-bold text-xs uppercase tracking-widest bg-gold-500/20 px-3.5 py-1.5 rounded-full border border-gold-400/30">
+                        <span class="text-kesar-300 font-bold text-xs uppercase tracking-widest bg-bhagwa-500/20 px-3.5 py-1.5 rounded-full border border-kesar-400/40">
                             Our Sacred Duty
                         </span>
                         <h2 class="text-3xl sm:text-4xl font-extrabold font-serif text-white mt-3 leading-tight">
@@ -561,25 +616,25 @@
 
                     <div class="space-y-3.5 pt-2">
                         <div class="flex items-center space-x-3.5">
-                            <div class="w-6 h-6 bg-gold-500 text-vedic-950 rounded-full flex items-center justify-center text-xs shrink-0 font-bold">
+                            <div class="w-6 h-6 bg-bhagwa-500 text-white rounded-full flex items-center justify-center text-xs shrink-0 font-bold">
                                 <i class="fa-solid fa-check"></i>
                             </div>
                             <span class="text-gray-200 font-medium">100% Non-Commercial: No cow is ever sold or abandoned</span>
                         </div>
                         <div class="flex items-center space-x-3.5">
-                            <div class="w-6 h-6 bg-gold-500 text-vedic-950 rounded-full flex items-center justify-center text-xs shrink-0 font-bold">
+                            <div class="w-6 h-6 bg-bhagwa-500 text-white rounded-full flex items-center justify-center text-xs shrink-0 font-bold">
                                 <i class="fa-solid fa-check"></i>
                             </div>
                             <span class="text-gray-200 font-medium">Special diets for blind, physically challenged, and senior cows</span>
                         </div>
                         <div class="flex items-center space-x-3.5">
-                            <div class="w-6 h-6 bg-gold-500 text-vedic-950 rounded-full flex items-center justify-center text-xs shrink-0 font-bold">
+                            <div class="w-6 h-6 bg-bhagwa-500 text-white rounded-full flex items-center justify-center text-xs shrink-0 font-bold">
                                 <i class="fa-solid fa-check"></i>
                             </div>
                             <span class="text-gray-200 font-medium">Hygienic sheds with automated mist coolers in hot summers</span>
                         </div>
                         <div class="flex items-center space-x-3.5">
-                            <div class="w-6 h-6 bg-gold-500 text-vedic-950 rounded-full flex items-center justify-center text-xs shrink-0 font-bold">
+                            <div class="w-6 h-6 bg-bhagwa-500 text-white rounded-full flex items-center justify-center text-xs shrink-0 font-bold">
                                 <i class="fa-solid fa-check"></i>
                             </div>
                             <span class="text-gray-200 font-medium">Sacred final rites with dignity upon a cow's natural demise</span>
@@ -587,12 +642,12 @@
                     </div>
 
                     <!-- Highlight Quote Box -->
-                    <div class="bg-gradient-to-r from-vedic-900/90 to-vedic-800/80 border-l-4 border-gold-400 p-6 rounded-r-2xl shadow-lg mt-6">
-                        <p class="text-gold-100 font-serif italic text-base sm:text-lg leading-snug">
+                    <div class="bg-gradient-to-r from-bhagwa-950 to-bhagwa-900 border-l-4 border-kesar-400 p-6 rounded-r-2xl shadow-lg mt-6">
+                        <p class="text-kesar-100 font-serif italic text-base sm:text-lg leading-snug">
                             "गावः पञ्च पवित्राणि पावनं परमं महत् ।<br>
                             न तासां पावनं किंचित् संसारे विद्यते परम् ॥"
                         </p>
-                        <p class="text-xs text-gold-300 mt-2 font-medium tracking-wide">
+                        <p class="text-xs text-kesar-300 mt-2 font-medium tracking-wide">
                             — Cows purify all five elements of existence. There is no purifier greater than Gomata.
                         </p>
                     </div>
@@ -601,135 +656,135 @@
         </div>
     </section>
 
-    <!-- Gallery Section (8 Live Verified Unique Real Photos) -->
-    <section id="gallery" class="py-24 bg-[#FAF8F5]">
+    <!-- Gallery Section (8 Ultra-4K Verified Unique Real Photos) -->
+    <section id="gallery" class="py-24 bg-[#FAF5EB]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12">
                 <div>
-                    <span class="text-vedic-800 font-bold text-xs uppercase tracking-widest bg-gold-100 text-gold-900 px-3.5 py-1.5 rounded-full border border-gold-300">
-                        Sanctuary Gallery
+                    <span class="text-bhagwa-900 font-bold text-xs uppercase tracking-widest bg-bhagwa-100 px-3.5 py-1.5 rounded-full border border-bhagwa-300">
+                        Sanctuary Gallery (4K Darshan)
                     </span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-vedic-950 font-serif mt-3">Moments of Care & Darshan</h2>
-                    <p class="text-gray-600 mt-1">Live glimpse of the joyful life of cows at our Mathura Dham Gaushala.</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-bhagwa-950 font-serif mt-3">Moments of Care & Darshan</h2>
+                    <p class="text-gray-600 mt-1">High-definition glimpse of the joyful life of cows at our Mathura Dham Gaushala.</p>
                 </div>
                 <div class="mt-4 sm:mt-0">
-                    <span class="inline-flex items-center space-x-2 text-sm text-gold-800 font-semibold bg-white px-4 py-2 rounded-full border border-gold-300 shadow-sm">
-                        <i class="fa-solid fa-images text-gold-500"></i>
-                        <span>Click any photo to zoom</span>
+                    <span class="inline-flex items-center space-x-2 text-sm text-bhagwa-900 font-semibold bg-white px-4 py-2 rounded-full border border-bhagwa-200 shadow-sm">
+                        <i class="fa-solid fa-images text-bhagwa-600"></i>
+                        <span>Click any photo to zoom in 4K</span>
                     </span>
                 </div>
             </div>
 
-            <!-- Gallery Grid (8 Live Verified Images with Captions & Lightbox Trigger) -->
+            <!-- Gallery Grid (8 Live Verified 4K Images - 100% Gomata & Calves Only) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Img 1: Desi Cow -->
-                <div onclick="openLightbox('https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=1200', 'Sacred Desi Gir Cow with Auspicious Tilak')" 
-                     class="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
-                    <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                         alt="Sacred Desi Gir Cow" 
+                <!-- Img 1: Desi Gir Cow with Tilak -->
+                <div onclick="openLightbox('https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=2400', 'पवित्र तिलकधारी गिर गोमाता दर्शन • Sacred Desi Gir Cow')" 
+                     class="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
+                    <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                         alt="पवित्र तिलकधारी देसी गिर गोमाता" 
                          class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-95">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                         <div>
-                            <span class="text-[10px] font-bold text-gold-300 uppercase tracking-wider block">Desi Breed</span>
-                            <p class="text-white text-xs font-semibold">Sacred Gir Cow Darshan</p>
+                            <span class="text-[10px] font-bold text-kesar-300 uppercase tracking-wider block">देसी गिर नस्ल</span>
+                            <p class="text-white text-xs font-semibold">पवित्र तिलकधारी गिर गोमाता</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Img 2: Sweet Calf -->
-                <div onclick="openLightbox('https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&w=1200&q=80', 'Nurturing & Bottle Feeding Rescued Calf')" 
-                     class="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
-                    <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&w=800&q=80" 
-                         alt="Nurturing Newborn Calf" 
+                <!-- Img 2: Sweet Baby Calf Nursery -->
+                <div onclick="openLightbox('https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&w=2400&q=95', 'नवजात शिशु बछड़े की कोमल सेवा • Rescued Baby Calf')" 
+                     class="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
+                    <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&w=1600&q=95" 
+                         alt="नवजात बछड़ा शिशु वार्ड" 
                          class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-95">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                         <div>
-                            <span class="text-[10px] font-bold text-gold-300 uppercase tracking-wider block">Calf Ward</span>
-                            <p class="text-white text-xs font-semibold">Gentle Care for Newborns</p>
+                            <span class="text-[10px] font-bold text-kesar-300 uppercase tracking-wider block">शिशु बछड़ा वार्ड</span>
+                            <p class="text-white text-xs font-semibold">अनाथ बछड़ों की विशेष सेवा</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Img 3: Green Pasture -->
-                <div onclick="openLightbox('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80', 'Lush Green Pastures for Free Grazing')" 
-                     class="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
-                    <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=800&q=80" 
-                         alt="Green Pasture Grazing" 
+                <!-- Img 3: Divine White Sacred Gomata -->
+                <div onclick="openLightbox('https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=2400&q=95', 'शांत एवं करुणामयी दिव्य गोमाता दर्शन • Sacred Divine Gomata')" 
+                     class="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
+                    <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=1600&q=95" 
+                         alt="करुणामयी दिव्य गोमाता दर्शन" 
                          class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-95">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                         <div>
-                            <span class="text-[10px] font-bold text-gold-300 uppercase tracking-wider block">Sanctuary Fields</span>
-                            <p class="text-white text-xs font-semibold">Morning Grazing Routine</p>
+                            <span class="text-[10px] font-bold text-kesar-300 uppercase tracking-wider block">गो-वात्सल्य</span>
+                            <p class="text-white text-xs font-semibold">शांत एवं करुणामयी गोमाता</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Img 4: Cow in Sunshine -->
-                <div onclick="openLightbox('https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=1200&q=80', 'Healthy Cow Enjoying Sunshine & Grass')" 
-                     class="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
-                    <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=800&q=80" 
-                         alt="Healthy Cow in Sunlit Pasture" 
+                <!-- Img 4: Pavitra Gir Gomata -->
+                <div onclick="openLightbox('https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Gir_01.JPG/1920px-Gir_01.JPG', 'पवित्र भगवा गिर गोमाता दर्शन • Sacred Bhagwa Gir Gomata')" 
+                     class="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
+                   <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Gir_01.JPG/960px-Gir_01.JPG"
+                         alt="पवित्र भगवा गिर गोमाता" 
                          class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-95">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                         <div>
-                            <span class="text-[10px] font-bold text-gold-300 uppercase tracking-wider block">Daily Routine</span>
-                            <p class="text-white text-xs font-semibold">Sunlight & Fresh Air</p>
+                            <span class="text-[10px] font-bold text-kesar-300 uppercase tracking-wider block">देसी गिर नस्ल</span>
+                            <p class="text-white text-xs font-semibold">पवित्र भगवा गिर गोमाता</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Img 5: Weatherproof Shed -->
-                <div onclick="openLightbox('https://images.pexels.com/photos/1459495/pexels-photo-1459495.jpeg?auto=compress&cs=tinysrgb&w=1200', 'Clean & Spacious Weather-Proof Gaushala Sheds')" 
-                     class="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
-                    <img src="https://images.pexels.com/photos/1459495/pexels-photo-1459495.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                         alt="Clean Gaushala Shed Infrastructure" 
+                <!-- Img 5: Mother Cow and Calf Nurturing Bond -->
+                <div onclick="openLightbox('https://images.unsplash.com/photo-1740477305175-8b39a2ae83ce?auto=format&fit=crop&w=2400&q=95', 'मातृ वात्सल्य: नन्हे बछड़े को दुलारती गोमाता • Mother Cow & Nursing Calf')" 
+                     class="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
+                    <img src="https://images.unsplash.com/photo-1740477305175-8b39a2ae83ce?auto=format&fit=crop&w=1200&q=90" 
+                         alt="गोमाता और नन्हे बछड़े का पवित्र वात्सल्य" 
                          class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-95">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                         <div>
-                            <span class="text-[10px] font-bold text-gold-300 uppercase tracking-wider block">Shelter Facilities</span>
-                            <p class="text-white text-xs font-semibold">Ventilated Modern Sheds</p>
+                            <span class="text-[10px] font-bold text-kesar-300 uppercase tracking-wider block">मातृ वात्सल्य</span>
+                            <p class="text-white text-xs font-semibold">नन्हे बछड़े को दुलारती गोमाता</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Img 6: Loving Cow Face -->
-                <div onclick="openLightbox('https://images.unsplash.com/photo-1568644396922-5c3bfae12521?auto=format&fit=crop&w=1200&q=80', 'Gentle and Loving Eyes of Gomata')" 
-                     class="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
-                    <img src="https://images.unsplash.com/photo-1568644396922-5c3bfae12521?auto=format&fit=crop&w=800&q=80" 
-                         alt="Gentle Cow Face Close-Up" 
+                <!-- Img 6: Sacred Kankrej Gomata -->
+                <div onclick="openLightbox('https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Kankrej_01.JPG/1920px-Kankrej_01.JPG', 'दिव्य कांकरेज गोमाता दर्शन • Sacred Kankrej Gomata')" 
+                     class="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Kankrej_01.JPG/960px-Kankrej_01.JPG" 
+                         alt="दिव्य कांकरेज गोमाता दर्शन" 
                          class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-95">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                         <div>
-                            <span class="text-[10px] font-bold text-gold-300 uppercase tracking-wider block">Affection</span>
-                            <p class="text-white text-xs font-semibold">Bond of Trust & Peace</p>
+                            <span class="text-[10px] font-bold text-kesar-300 uppercase tracking-wider block">कांकरेज नस्ल</span>
+                            <p class="text-white text-xs font-semibold">भव्य दिव्य कांकरेज गोमाता</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Img 7: Fresh Fodder Distribution -->
-                <div onclick="openLightbox('https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=1200&q=80', 'Fresh Morning Green Fodder Feeding')" 
-                     class="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
-                    <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80" 
-                         alt="Morning Fresh Fodder" 
+                <!-- Img 7: Cows Feeding on Fresh Green Grass (Gau Gras) -->
+                <div onclick="openLightbox('https://images.pexels.com/photos/735968/pexels-photo-735968.jpeg?auto=compress&cs=tinysrgb&w=2400', 'गौ-ग्रास सेवा: पौष्टिक हरा चारा खाती गोमाता • Fresh Fodder Feeding')" 
+                     class="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
+                    <img src="https://images.pexels.com/photos/735968/pexels-photo-735968.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                         alt="पौष्टिक हरा चारा खाती गायें" 
                          class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-95">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                         <div>
-                            <span class="text-[10px] font-bold text-gold-300 uppercase tracking-wider block">Gau Gras</span>
-                            <p class="text-white text-xs font-semibold">Morning Fodder Seva</p>
+                            <span class="text-[10px] font-bold text-kesar-300 uppercase tracking-wider block">गौ-ग्रास सेवा</span>
+                            <p class="text-white text-xs font-semibold">पौष्टिक हरा चारा सेवन</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Img 8: Vrindavan Dham Holy Atmosphere -->
-                <div onclick="openLightbox('https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=1200&q=80', 'Sacred Heritage Land of Mathura Vrindavan')" 
-                     class="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
-                    <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=800&q=80" 
-                         alt="Mathura Vrindavan Holy Soil" 
+                <!-- Img 8: Protected Cattle in UP Gaushala -->
+                <div onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/6/62/Gaushala_Uttar_Pradesh.jpg', 'गौशाला के पावन प्रांगण में सुरक्षित गौवंश • Gaushala Sanctuary Uttar Pradesh')" 
+                     class="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 h-64 cursor-pointer bg-black">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Gaushala_Uttar_Pradesh.jpg/960px-Gaushala_Uttar_Pradesh.jpg" 
+                         alt="गौशाला प्रांगण में सुरक्षित गौवंश" 
                          class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-95">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                         <div>
-                            <span class="text-[10px] font-bold text-gold-300 uppercase tracking-wider block">Braj Bhoomi</span>
-                            <p class="text-white text-xs font-semibold">The Sacred Land of Gau Seva</p>
+                            <span class="text-[10px] font-bold text-kesar-300 uppercase tracking-wider block">गौ-आश्रय धाम</span>
+                            <p class="text-white text-xs font-semibold">प्रांगण में सुरक्षित गोमाताएँ</p>
                         </div>
                     </div>
                 </div>
@@ -737,146 +792,146 @@
         </div>
     </section>
 
-    <!-- Donation Schemes / Seva Offerings Section -->
-    <section id="plans" class="py-24 bg-white border-t border-[#E8DFC9]">
+    <!-- Donation Schemes / Seva Offerings Section (Clean Saffron & Sandalwood Cards) -->
+    <section id="plans" class="py-24 bg-white border-t border-[#EEDFCB]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="text-vedic-800 font-bold text-xs uppercase tracking-widest bg-gold-100 text-gold-900 px-3.5 py-1.5 rounded-full border border-gold-300">
+                <span class="text-bhagwa-900 font-bold text-xs uppercase tracking-widest bg-bhagwa-100 px-3.5 py-1.5 rounded-full border border-bhagwa-300">
                     Seva Sankalp Schemes
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-vedic-950 font-serif">Sponsor a Cow in Your Name</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bhagwa-950 font-serif">Sponsor a Cow in Your Name</h2>
                 <p class="text-gray-600 text-base sm:text-lg">Dedicate Gau Seva on birthdays, anniversaries, or in memory of loving ancestors.</p>
             </div>
 
             <!-- Pricing / Seva Tiers Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Tier 1 -->
-                <div class="bg-[#FAF8F5] rounded-3xl p-6 border border-[#E6DDCD] flex flex-col justify-between hover:border-gold-500/50 hover:shadow-xl transition-all duration-300 royal-card-hover">
+                <div class="bg-[#FAF5EB] rounded-3xl p-6 border border-[#EEDFCB] flex flex-col justify-between clean-card-hover">
                     <div>
-                        <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <div class="w-12 h-12 bg-bhagwa-100 text-bhagwa-800 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
                             <i class="fa-solid fa-leaf"></i>
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 font-serif">One Day Gau Gras</h3>
                         <p class="text-xs text-gray-500 mt-1">Provide green fodder for 5 cows for one day</p>
                         <div class="mt-4 mb-6">
-                            <span class="text-3xl font-extrabold text-vedic-950">₹500</span>
+                            <span class="text-3xl font-extrabold text-bhagwa-950">₹500</span>
                             <span class="text-xs text-gray-500">/ one-time</span>
                         </div>
                         <ul class="space-y-2.5 text-xs text-gray-600 border-t border-gray-200/80 pt-4">
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <i class="fa-solid fa-check text-bhagwa-600"></i>
                                 <span>15 kg fresh nutritious grass</span>
                             </li>
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <i class="fa-solid fa-check text-bhagwa-600"></i>
                                 <span>Instant 80G tax receipt</span>
                             </li>
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <i class="fa-solid fa-check text-bhagwa-600"></i>
                                 <span>WhatsApp video of feeding</span>
                             </li>
                         </ul>
                     </div>
-                    <button onclick="selectDonation(500, 'One Day Gau Gras')" class="mt-6 w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-vedic-900 hover:bg-vedic-950 text-white transition">
+                    <button onclick="selectDonation(500, 'One Day Gau Gras')" class="mt-6 w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-bhagwa-900 hover:bg-bhagwa-950 text-white transition">
                         Select Seva &rarr;
                     </button>
                 </div>
 
-                <!-- Tier 2 (Popular) -->
-                <div class="bg-gradient-to-b from-[#FAF7F0] to-[#FFFDF9] rounded-3xl p-6 border-2 border-gold-400 relative shadow-lg flex flex-col justify-between royal-card-hover">
-                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gold-500 to-amber-600 text-vedic-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                <!-- Tier 2 (Popular - Auspicious Bhagwa Kesari) -->
+                <div class="bg-gradient-to-b from-[#FFF7ED] to-[#FFFDF9] rounded-3xl p-6 border-2 border-bhagwa-500 relative shadow-lg flex flex-col justify-between clean-card-hover">
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-bhagwa-600 to-kesar-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
                         Most Auspicious
                     </div>
                     <div>
-                        <div class="w-12 h-12 bg-gold-100 text-gold-800 rounded-xl flex items-center justify-center text-xl mb-4 font-bold mt-1">
+                        <div class="w-12 h-12 bg-kesar-100 text-kesar-800 rounded-xl flex items-center justify-center text-xl mb-4 font-bold mt-1">
                             <i class="fa-solid fa-kit-medical"></i>
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 font-serif">Medical Seva Kit</h3>
                         <p class="text-xs text-gray-500 mt-1">Sponsor life-saving medicines & injections for an injured cow</p>
                         <div class="mt-4 mb-6">
-                            <span class="text-3xl font-extrabold text-vedic-950">₹1,100</span>
+                            <span class="text-3xl font-extrabold text-bhagwa-950">₹1,100</span>
                             <span class="text-xs text-gray-500">/ per cow</span>
                         </div>
                         <ul class="space-y-2.5 text-xs text-gray-600 border-t border-gray-200/80 pt-4">
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-gold-600"></i>
+                                <i class="fa-solid fa-check text-kesar-600"></i>
                                 <span>Bandages & antiseptic dressing</span>
                             </li>
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-gold-600"></i>
+                                <i class="fa-solid fa-check text-kesar-600"></i>
                                 <span>Antibiotics & pain relief</span>
                             </li>
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-gold-600"></i>
+                                <i class="fa-solid fa-check text-kesar-600"></i>
                                 <span>Vet doctor consultation charge</span>
                             </li>
                         </ul>
                     </div>
-                    <button onclick="selectDonation(1100, 'Medical Seva Kit')" class="mt-6 w-full py-2.5 px-4 rounded-xl text-xs font-bold shimmer-gold text-vedic-950 transition shadow">
+                    <button onclick="selectDonation(1100, 'Medical Seva Kit')" class="mt-6 w-full py-2.5 px-4 rounded-xl text-xs font-bold shimmer-bhagwa text-white transition shadow">
                         Select Seva &rarr;
                     </button>
                 </div>
 
                 <!-- Tier 3 -->
-                <div class="bg-[#FAF8F5] rounded-3xl p-6 border border-[#E6DDCD] flex flex-col justify-between hover:border-gold-500/50 hover:shadow-xl transition-all duration-300 royal-card-hover">
+                <div class="bg-[#FAF5EB] rounded-3xl p-6 border border-[#EEDFCB] flex flex-col justify-between clean-card-hover">
                     <div>
-                        <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <div class="w-12 h-12 bg-bhagwa-100 text-bhagwa-800 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
                             <i class="fa-solid fa-cow"></i>
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 font-serif">Adopt a Cow (Monthly)</h3>
                         <p class="text-xs text-gray-500 mt-1">Complete fodder, shelter and medical care for 1 full month</p>
                         <div class="mt-4 mb-6">
-                            <span class="text-3xl font-extrabold text-vedic-950">₹2,500</span>
+                            <span class="text-3xl font-extrabold text-bhagwa-950">₹2,500</span>
                             <span class="text-xs text-gray-500">/ month</span>
                         </div>
                         <ul class="space-y-2.5 text-xs text-gray-600 border-t border-gray-200/80 pt-4">
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <i class="fa-solid fa-check text-bhagwa-600"></i>
                                 <span>Full food & health coverage</span>
                             </li>
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <i class="fa-solid fa-check text-bhagwa-600"></i>
                                 <span>Donor certificate in your name</span>
                             </li>
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <i class="fa-solid fa-check text-bhagwa-600"></i>
                                 <span>Monthly photo updates on WhatsApp</span>
                             </li>
                         </ul>
                     </div>
-                    <button onclick="selectDonation(2500, 'Adopt a Cow Monthly')" class="mt-6 w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-vedic-900 hover:bg-vedic-950 text-white transition">
+                    <button onclick="selectDonation(2500, 'Adopt a Cow Monthly')" class="mt-6 w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-bhagwa-900 hover:bg-bhagwa-950 text-white transition">
                         Select Seva &rarr;
                     </button>
                 </div>
 
                 <!-- Tier 4 -->
-                <div class="bg-[#FAF8F5] rounded-3xl p-6 border border-[#E6DDCD] flex flex-col justify-between hover:border-gold-500/50 hover:shadow-xl transition-all duration-300 royal-card-hover">
+                <div class="bg-[#FAF5EB] rounded-3xl p-6 border border-[#EEDFCB] flex flex-col justify-between clean-card-hover">
                     <div>
-                        <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <div class="w-12 h-12 bg-bhagwa-100 text-bhagwa-800 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
                             <i class="fa-solid fa-landmark"></i>
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 font-serif">Shelter & Shed Seva</h3>
                         <p class="text-xs text-gray-500 mt-1">Contribute to weatherproof shelter roofs & flooring</p>
                         <div class="mt-4 mb-6">
-                            <span class="text-3xl font-extrabold text-vedic-950">₹5,100</span>
+                            <span class="text-3xl font-extrabold text-bhagwa-950">₹5,100</span>
                             <span class="text-xs text-gray-500">/ unit</span>
                         </div>
                         <ul class="space-y-2.5 text-xs text-gray-600 border-t border-gray-200/80 pt-4">
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <i class="fa-solid fa-check text-bhagwa-600"></i>
                                 <span>Name engraved on donor plaque</span>
                             </li>
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <i class="fa-solid fa-check text-bhagwa-600"></i>
                                 <span>80G Tax Exemption Certificate</span>
                             </li>
                             <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <i class="fa-solid fa-check text-bhagwa-600"></i>
                                 <span>Special VIP Guest Darshan Pass</span>
                             </li>
                         </ul>
                     </div>
-                    <button onclick="selectDonation(5100, 'Shelter Shed Seva')" class="mt-6 w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-vedic-900 hover:bg-vedic-950 text-white transition">
+                    <button onclick="selectDonation(5100, 'Shelter Shed Seva')" class="mt-6 w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-bhagwa-900 hover:bg-bhagwa-950 text-white transition">
                         Select Seva &rarr;
                     </button>
                 </div>
@@ -884,11 +939,11 @@
         </div>
     </section>
 
-    <!-- Why Support Us / Online Donation Portal Section -->
-    <section id="donations" class="relative bg-gradient-to-b from-[#062117] via-[#093526] to-[#062117] text-white py-24 overflow-hidden border-t border-gold-500/30">
-        <!-- Live Verified Background of Golden Hour Cows in Pasture -->
+    <!-- Why Support Us / Online Donation Portal Section (Bhagwa Edition) -->
+    <section id="donations" class="relative bg-gradient-to-b from-[#240802] via-[#3B1106] to-[#240802] text-white py-24 overflow-hidden border-t border-bhagwa-500/30">
+        <!-- Live Verified 4K Background of Sunset Saffron Cows -->
         <div class="absolute inset-0 z-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=1920&q=80" 
+            <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=2400&q=90" 
                  alt="Golden Sunset in Cow Sanctuary" 
                  class="w-full h-full object-cover">
         </div>
@@ -897,7 +952,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <!-- Left Details & Impact -->
                 <div class="lg:col-span-6 space-y-6">
-                    <span class="text-gold-300 font-bold text-xs uppercase tracking-widest bg-gold-500/20 px-3.5 py-1.5 rounded-full border border-gold-500/40">
+                    <span class="text-kesar-300 font-bold text-xs uppercase tracking-widest bg-bhagwa-600/30 px-3.5 py-1.5 rounded-full border border-bhagwa-500/40">
                         Online Seva Samarpan
                     </span>
                     <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-serif leading-tight">
@@ -910,7 +965,7 @@
                     <!-- Trust Points Grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                         <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl flex items-center space-x-3.5">
-                            <div class="w-10 h-10 bg-gold-500/30 text-gold-300 rounded-xl flex items-center justify-center shrink-0 text-lg">
+                            <div class="w-10 h-10 bg-bhagwa-500/30 text-kesar-300 rounded-xl flex items-center justify-center shrink-0 text-lg">
                                 <i class="fa-solid fa-stamp"></i>
                             </div>
                             <div>
@@ -920,7 +975,7 @@
                         </div>
 
                         <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl flex items-center space-x-3.5">
-                            <div class="w-10 h-10 bg-gold-500/30 text-gold-300 rounded-xl flex items-center justify-center shrink-0 text-lg">
+                            <div class="w-10 h-10 bg-bhagwa-500/30 text-kesar-300 rounded-xl flex items-center justify-center shrink-0 text-lg">
                                 <i class="fa-solid fa-qrcode"></i>
                             </div>
                             <div>
@@ -930,7 +985,7 @@
                         </div>
 
                         <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl flex items-center space-x-3.5">
-                            <div class="w-10 h-10 bg-gold-500/30 text-gold-300 rounded-xl flex items-center justify-center shrink-0 text-lg">
+                            <div class="w-10 h-10 bg-bhagwa-500/30 text-kesar-300 rounded-xl flex items-center justify-center shrink-0 text-lg">
                                 <i class="fa-solid fa-envelope-circle-check"></i>
                             </div>
                             <div>
@@ -940,7 +995,7 @@
                         </div>
 
                         <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl flex items-center space-x-3.5">
-                            <div class="w-10 h-10 bg-gold-500/30 text-gold-300 rounded-xl flex items-center justify-center shrink-0 text-lg">
+                            <div class="w-10 h-10 bg-bhagwa-500/30 text-kesar-300 rounded-xl flex items-center justify-center shrink-0 text-lg">
                                 <i class="fa-solid fa-shield-cat"></i>
                             </div>
                             <div>
@@ -950,11 +1005,11 @@
                         </div>
                     </div>
 
-                    <!-- Direct Bank Transfer Info -->
-                    <div class="bg-[#051c14] border border-gold-500/40 p-5 rounded-2xl space-y-2">
-                        <div class="flex items-center justify-between text-xs text-gold-300 font-bold uppercase tracking-wider">
+                    <!-- Direct Bank Transfer Info in Bhagwa Tone -->
+                    <div class="bg-[#1C0601] border border-bhagwa-600/40 p-5 rounded-2xl space-y-2">
+                        <div class="flex items-center justify-between text-xs text-kesar-300 font-bold uppercase tracking-wider">
                             <span><i class="fa-solid fa-building-columns mr-1.5"></i> Direct Bank Transfer (NEFT/RTGS)</span>
-                            <button onclick="copyBankDetails()" class="text-[11px] bg-gold-500/20 hover:bg-gold-500/30 text-gold-300 px-2 py-0.5 rounded border border-gold-400/40 transition">
+                            <button onclick="copyBankDetails()" class="text-[11px] bg-bhagwa-500/30 hover:bg-bhagwa-500/40 text-kesar-300 px-2.5 py-0.5 rounded border border-kesar-400/40 transition">
                                 <i class="fa-solid fa-copy mr-1"></i> Copy Details
                             </button>
                         </div>
@@ -969,33 +1024,33 @@
 
                 <!-- Right Interactive Donation Form Card -->
                 <div class="lg:col-span-6">
-                    <div class="bg-white text-gray-900 rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-gold-400/30 relative">
+                    <div class="bg-white text-gray-900 rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-kesar-400/40 relative">
                         <div class="flex items-center justify-between border-b border-gray-100 pb-4 mb-6">
                             <div>
-                                <h3 class="text-xl font-extrabold text-vedic-950 font-serif">Quick Seva Donation</h3>
+                                <h3 class="text-xl font-extrabold text-bhagwa-950 font-serif">Quick Seva Donation</h3>
                                 <p class="text-xs text-gray-500 mt-0.5">Choose an amount or enter custom contribution</p>
                             </div>
-                            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                            <span class="bg-bhagwa-100 text-bhagwa-900 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-bhagwa-300">
                                 Verified 80G Trust
                             </span>
                         </div>
 
                         <!-- Amount Selection Chips -->
                         <div class="space-y-4">
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-600">Select Seva Amount (INR)</label>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700">Select Seva Amount (INR)</label>
                             <div class="grid grid-cols-3 gap-3">
-                                <button type="button" onclick="setCustomAmount(500)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-gold-500 hover:bg-gold-50 transition active-btn">₹500</button>
-                                <button type="button" onclick="setCustomAmount(1100)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-gold-500 hover:bg-gold-50 transition">₹1,100</button>
-                                <button type="button" onclick="setCustomAmount(2100)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-gold-500 hover:bg-gold-50 transition">₹2,100</button>
-                                <button type="button" onclick="setCustomAmount(5100)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-gold-500 hover:bg-gold-50 transition">₹5,100</button>
-                                <button type="button" onclick="setCustomAmount(11000)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-gold-500 hover:bg-gold-50 transition">₹11,000</button>
-                                <button type="button" onclick="setCustomAmount(21000)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-gold-500 hover:bg-gold-50 transition">₹21,000</button>
+                                <button type="button" onclick="setCustomAmount(500)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-bhagwa-500 hover:bg-bhagwa-50 transition active-btn">₹500</button>
+                                <button type="button" onclick="setCustomAmount(1100)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-bhagwa-500 hover:bg-bhagwa-50 transition">₹1,100</button>
+                                <button type="button" onclick="setCustomAmount(2100)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-bhagwa-500 hover:bg-bhagwa-50 transition">₹2,100</button>
+                                <button type="button" onclick="setCustomAmount(5100)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-bhagwa-500 hover:bg-bhagwa-50 transition">₹5,100</button>
+                                <button type="button" onclick="setCustomAmount(11000)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-bhagwa-500 hover:bg-bhagwa-50 transition">₹11,000</button>
+                                <button type="button" onclick="setCustomAmount(21000)" class="amount-btn py-3 rounded-xl border border-gray-200 text-sm font-bold hover:border-bhagwa-500 hover:bg-bhagwa-50 transition">₹21,000</button>
                             </div>
 
                             <!-- Custom Amount Input -->
                             <div class="relative">
                                 <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">₹</span>
-                                <input id="donation-amount-input" type="number" min="100" value="500" class="w-full pl-9 pr-4 py-3 bg-[#FAF8F5] border border-gray-300 rounded-xl text-base font-bold text-gray-900 focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-200 transition" placeholder="Or enter custom amount">
+                                <input id="donation-amount-input" type="number" min="100" value="500" class="w-full pl-9 pr-4 py-3 bg-[#FAF5EB] border border-gray-300 rounded-xl text-base font-bold text-gray-900 focus:outline-none focus:border-bhagwa-500 focus:ring-2 focus:ring-bhagwa-200 transition" placeholder="Or enter custom amount">
                             </div>
 
                             <!-- Donor Details Form -->
@@ -1003,30 +1058,30 @@
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <div>
                                         <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Your Full Name *</label>
-                                        <input id="donor-name" type="text" required class="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-gold-500" placeholder="e.g. Ramesh Chandra">
+                                        <input id="donor-name" type="text" required class="w-full px-3.5 py-2.5 bg-[#FAF5EB] border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-bhagwa-500" placeholder="e.g. Ramesh Chandra">
                                     </div>
                                     <div>
                                         <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Phone Number (For WhatsApp Receipt) *</label>
-                                        <input id="donor-phone" type="tel" required class="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-gold-500" placeholder="+91 9876543210">
+                                        <input id="donor-phone" type="tel" required class="w-full px-3.5 py-2.5 bg-[#FAF5EB] border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-bhagwa-500" placeholder="+91 9876543210">
                                     </div>
                                 </div>
                                 <div>
                                     <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Email Address (For 80G Certificate) *</label>
-                                    <input id="donor-email" type="email" required class="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-gold-500" placeholder="your.name@example.com">
+                                    <input id="donor-email" type="email" required class="w-full px-3.5 py-2.5 bg-[#FAF5EB] border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-bhagwa-500" placeholder="your.name@example.com">
                                 </div>
                                 <div>
                                     <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">PAN Card Number (Optional, for 80G Tax Benefit)</label>
-                                    <input id="donor-pan" type="text" maxlength="10" class="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-gray-200 rounded-xl text-xs uppercase focus:outline-none focus:border-gold-500" placeholder="ABCDE1234F">
+                                    <input id="donor-pan" type="text" maxlength="10" class="w-full px-3.5 py-2.5 bg-[#FAF5EB] border border-gray-200 rounded-xl text-xs uppercase focus:outline-none focus:border-bhagwa-500" placeholder="ABCDE1234F">
                                 </div>
 
-                                <button type="submit" class="w-full shimmer-gold hover:opacity-95 text-vedic-950 font-extrabold py-3.5 px-6 rounded-xl shadow-lg shadow-gold-500/25 flex items-center justify-center space-x-2 transition transform hover:-translate-y-0.5 border border-gold-300 text-sm">
+                                <button type="submit" class="w-full shimmer-bhagwa hover:opacity-95 text-white font-extrabold py-3.5 px-6 rounded-xl shadow-lg shadow-bhagwa-600/30 flex items-center justify-center space-x-2 transition transform hover:-translate-y-0.5 border border-kesar-300 text-sm">
                                     <i class="fa-solid fa-qrcode text-base"></i>
                                     <span>Proceed to Pay with UPI / Card</span>
                                 </button>
                             </form>
 
                             <p class="text-center text-[11px] text-gray-500 pt-1">
-                                <i class="fa-solid fa-lock mr-1 text-gold-600"></i> 256-Bit SSL Encrypted & Non-profit Tax Exempt Certified
+                                <i class="fa-solid fa-lock mr-1 text-bhagwa-600"></i> 256-Bit SSL Encrypted & Non-profit Tax Exempt Certified
                             </p>
                         </div>
                     </div>
@@ -1035,91 +1090,123 @@
         </div>
     </section>
 
-    <!-- Testimonials Section (Real Indian Donors & Well-Wishers) -->
-    <section id="testimonials" class="py-24 bg-[#FAF8F5]">
+    <!-- Testimonials Section (Fully Mobile Responsive, Clean & Elegant) -->
+    <section id="testimonials" class="py-16 sm:py-20 lg:py-24 bg-[#FAF5EB]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="text-vedic-800 font-bold text-xs uppercase tracking-widest bg-gold-100 text-gold-900 px-3.5 py-1.5 rounded-full border border-gold-300">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 lg:mb-16 space-y-2.5 sm:space-y-3 px-2">
+                <span class="inline-block text-bhagwa-900 font-bold text-xs uppercase tracking-widest bg-bhagwa-100 px-3.5 py-1.5 rounded-full border border-bhagwa-300 shadow-xs">
                     Words of Devotion
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-vedic-950 font-serif">What Our Donors & Visitors Say</h2>
-                <p class="text-gray-600">Hear from devout supporters who regularly visit and support our gaushala.</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-bhagwa-950 font-serif leading-tight">
+                    What Our Donors & Visitors Say
+                </h2>
+                <p class="text-xs sm:text-sm md:text-base text-gray-600 max-w-xl mx-auto leading-relaxed">
+                    Hear from devout supporters and families who regularly visit and support our gaushala in Mathura Dham.
+                </p>
             </div>
 
-            <!-- Testimonials Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonials Grid (Responsive 1 Col on Mobile -> 2 Col on Tablet -> 3 Col on Desktop) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-white border border-[#EBE3D5] p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative royal-card-hover">
+                <div class="bg-white border border-[#EEDFCB] p-6 sm:p-7 lg:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative clean-card-hover w-full overflow-hidden">
                     <div>
-                        <div class="flex items-center space-x-1 text-gold-500 text-sm mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-1 text-kesar-500 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-solid fa-quote-right text-bhagwa-200 text-2xl"></i>
                         </div>
-                        <p class="text-gray-700 text-sm sm:text-base leading-relaxed italic mb-6">
+                        <p class="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed italic mb-6">
                             "Visiting Shree Gau Seva Dham was a spiritual blessing for our entire family. We sponsored an annual fodder plan for 5 cows on our parents' 50th anniversary. The transparency and care here is unmatched."
                         </p>
                     </div>
-                    <div class="flex items-center space-x-4 pt-4 border-t border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" 
-                             alt="Rajesh Singhal" 
-                             class="w-13 h-13 rounded-full object-cover border-2 border-gold-500 shadow-sm">
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-sm font-serif">Rajesh Singhal</h4>
-                            <p class="text-xs text-gold-700 font-semibold">Industrialist & Regular Donor, Delhi</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100 gap-3">
+                        <div class="flex items-center space-x-3 min-w-0">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=90" 
+                                 alt="Rajesh Singhal" 
+                                 class="w-12 h-12 rounded-full object-cover shrink-0 border-2 border-bhagwa-500 shadow-sm"
+                                 style="width: 48px; height: 48px;">
+                            <div class="min-w-0">
+                                <h4 class="font-bold text-gray-900 text-sm font-serif truncate">Rajesh Singhal</h4>
+                                <p class="text-[11px] sm:text-xs text-bhagwa-700 font-semibold truncate">Industrialist & Donor, Delhi</p>
+                            </div>
                         </div>
+                        <span class="inline-flex items-center text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 shrink-0">
+                            <i class="fa-solid fa-circle-check mr-1 text-emerald-600"></i> Verified
+                        </span>
                     </div>
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="bg-white border border-[#EBE3D5] p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative royal-card-hover">
+                <div class="bg-white border border-[#EEDFCB] p-6 sm:p-7 lg:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative clean-card-hover w-full overflow-hidden">
                     <div>
-                        <div class="flex items-center space-x-1 text-gold-500 text-sm mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-1 text-kesar-500 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-solid fa-quote-right text-bhagwa-200 text-2xl"></i>
                         </div>
-                        <p class="text-gray-700 text-sm sm:text-base leading-relaxed italic mb-6">
+                        <p class="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed italic mb-6">
                             "I have seen their cow ambulance rush late at night to rescue an injured mother cow on the highway. Within 30 minutes, she was receiving emergency treatment. True heroes of Sanatan Dharma!"
                         </p>
                     </div>
-                    <div class="flex items-center space-x-4 pt-4 border-t border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" 
-                             alt="Sunita Sharma" 
-                             class="w-13 h-13 rounded-full object-cover border-2 border-gold-500 shadow-sm">
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-sm font-serif">Sunita Sharma</h4>
-                            <p class="text-xs text-gold-700 font-semibold">Volunteer & Social Worker, Mathura</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100 gap-3">
+                        <div class="flex items-center space-x-3 min-w-0">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=90" 
+                                 alt="Sunita Sharma" 
+                                 class="w-12 h-12 rounded-full object-cover shrink-0 border-2 border-bhagwa-500 shadow-sm"
+                                 style="width: 48px; height: 48px;">
+                            <div class="min-w-0">
+                                <h4 class="font-bold text-gray-900 text-sm font-serif truncate">Sunita Sharma</h4>
+                                <p class="text-[11px] sm:text-xs text-bhagwa-700 font-semibold truncate">Social Worker, Mathura</p>
+                            </div>
                         </div>
+                        <span class="inline-flex items-center text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 shrink-0">
+                            <i class="fa-solid fa-circle-check mr-1 text-emerald-600"></i> Verified
+                        </span>
                     </div>
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="bg-white border border-[#EBE3D5] p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative royal-card-hover">
+                <div class="bg-white border border-[#EEDFCB] p-6 sm:p-7 lg:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative clean-card-hover w-full overflow-hidden md:col-span-2 lg:col-span-1">
                     <div>
-                        <div class="flex items-center space-x-1 text-gold-500 text-sm mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-1 text-kesar-500 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-solid fa-quote-right text-bhagwa-200 text-2xl"></i>
                         </div>
-                        <p class="text-gray-700 text-sm sm:text-base leading-relaxed italic mb-6">
+                        <p class="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed italic mb-6">
                             "As a veterinarian, I thoroughly inspected their hospital wing, sanitation, and dietary formulas. The standards are commendable. Every wounded and aged cow is treated with saintly devotion."
                         </p>
                     </div>
-                    <div class="flex items-center space-x-4 pt-4 border-t border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80" 
-                             alt="Dr. Vikramaditya Singh" 
-                             class="w-13 h-13 rounded-full object-cover border-2 border-gold-500 shadow-sm">
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-sm font-serif">Dr. Vikramaditya Singh</h4>
-                            <p class="text-xs text-gold-700 font-semibold">Senior Vet Consultant, Lucknow</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100 gap-3">
+                        <div class="flex items-center space-x-3 min-w-0">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=90" 
+                                 alt="Dr. Vikramaditya Singh" 
+                                 class="w-12 h-12 rounded-full object-cover shrink-0 border-2 border-bhagwa-500 shadow-sm"
+                                 style="width: 48px; height: 48px;">
+                            <div class="min-w-0">
+                                <h4 class="font-bold text-gray-900 text-sm font-serif truncate">Dr. Vikramaditya Singh</h4>
+                                <p class="text-[11px] sm:text-xs text-bhagwa-700 font-semibold truncate">Senior Vet, Lucknow</p>
+                            </div>
                         </div>
+                        <span class="inline-flex items-center text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 shrink-0">
+                            <i class="fa-solid fa-circle-check mr-1 text-emerald-600"></i> Verified
+                        </span>
                     </div>
                 </div>
             </div>
@@ -1127,40 +1214,40 @@
     </section>
 
     <!-- FAQ Accordion Section -->
-    <section class="py-20 bg-white border-t border-[#E8DFC9]">
+    <section class="py-20 bg-white border-t border-[#EEDFCB]">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-vedic-800 font-bold text-xs uppercase tracking-widest bg-gold-100 text-gold-900 px-3.5 py-1.5 rounded-full border border-gold-300">
+                <span class="text-bhagwa-900 font-bold text-xs uppercase tracking-widest bg-bhagwa-100 px-3.5 py-1.5 rounded-full border border-bhagwa-300">
                     Frequently Asked Questions
                 </span>
-                <h2 class="text-3xl font-extrabold text-vedic-950 font-serif mt-3">Everything You Need to Know</h2>
+                <h2 class="text-3xl font-extrabold text-bhagwa-950 font-serif mt-3">Everything You Need to Know</h2>
             </div>
 
             <div class="space-y-4">
-                <div class="border border-[#E7DFCF] rounded-2xl overflow-hidden bg-[#FAF8F5]">
+                <div class="border border-[#EEDFCB] rounded-2xl overflow-hidden bg-[#FAF5EB]">
                     <button onclick="toggleFaq(1)" class="w-full text-left p-5 font-bold text-gray-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
                         <span>Will I get a 50% Tax Exemption certificate under 80G?</span>
-                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-gold-600 transition-transform duration-300"></i>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-bhagwa-600 transition-transform duration-300"></i>
                     </button>
                     <div id="faq-content-1" class="px-5 pb-5 text-sm text-gray-600 hidden">
                         Yes! Shree Gau Seva Dham Trust is registered under Section 12AA and 80G of the Income Tax Act, 1961. You will receive an official tax deduction certificate with registration number and QR code instantly via email and WhatsApp.
                     </div>
                 </div>
 
-                <div class="border border-[#E7DFCF] rounded-2xl overflow-hidden bg-[#FAF8F5]">
+                <div class="border border-[#EEDFCB] rounded-2xl overflow-hidden bg-[#FAF5EB]">
                     <button onclick="toggleFaq(2)" class="w-full text-left p-5 font-bold text-gray-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
                         <span>Can I visit the Gaushala and feed cows with my family?</span>
-                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-gold-600 transition-transform duration-300"></i>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-bhagwa-600 transition-transform duration-300"></i>
                     </button>
                     <div id="faq-content-2" class="px-5 pb-5 text-sm text-gray-600 hidden">
                         Absolutely! We welcome all devotees and families 7 days a week. Our visiting hours are 6:30 AM – 11:30 AM and 4:00 PM – 7:30 PM. You can participate in the evening Gau Aarti and feed fresh jaggery and green grass.
                     </div>
                 </div>
 
-                <div class="border border-[#E7DFCF] rounded-2xl overflow-hidden bg-[#FAF8F5]">
+                <div class="border border-[#EEDFCB] rounded-2xl overflow-hidden bg-[#FAF5EB]">
                     <button onclick="toggleFaq(3)" class="w-full text-left p-5 font-bold text-gray-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
                         <span>How can I sponsor fodder on my birthday or in memory of ancestors?</span>
-                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-gold-600 transition-transform duration-300"></i>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-bhagwa-600 transition-transform duration-300"></i>
                     </button>
                     <div id="faq-content-3" class="px-5 pb-5 text-sm text-gray-600 hidden">
                         While donating through our form or WhatsApp, mention your special date and the person's name. On that auspicious day, special prayers and green grass will be offered in their name, and a video clip will be sent to your WhatsApp.
@@ -1171,13 +1258,13 @@
     </section>
 
     <!-- Contact & Visit Us Section -->
-    <section id="contact" class="py-24 bg-[#FAF8F5] border-t border-[#EDE4D5]">
+    <section id="contact" class="py-24 bg-[#FAF5EB] border-t border-[#EEDFCB]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-14">
-                <span class="text-vedic-800 font-bold text-xs uppercase tracking-widest bg-gold-100 text-gold-900 px-3.5 py-1.5 rounded-full border border-gold-300">
+                <span class="text-bhagwa-900 font-bold text-xs uppercase tracking-widest bg-bhagwa-100 px-3.5 py-1.5 rounded-full border border-bhagwa-300">
                     Connect With Us
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-vedic-950 font-serif mt-3">Visit Shree Gau Seva Dham</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bhagwa-950 font-serif mt-3">Visit Shree Gau Seva Dham</h2>
                 <p class="text-gray-600 mt-1">We welcome devotees, volunteers, and visitors every day for holy Gau Darshan.</p>
             </div>
 
@@ -1185,9 +1272,9 @@
                 <!-- Left Details + Form -->
                 <div class="lg:col-span-7 space-y-8">
                     <!-- Contact Details Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 bg-white p-6 rounded-3xl shadow-sm border border-[#E9DFCE]">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 bg-white p-6 rounded-3xl shadow-sm border border-[#EEDFCB]">
                         <div class="flex items-start space-x-3.5">
-                            <div class="w-11 h-11 bg-vedic-100 text-vedic-800 rounded-xl flex items-center justify-center shrink-0">
+                            <div class="w-11 h-11 bg-bhagwa-100 text-bhagwa-800 rounded-xl flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-location-dot text-lg"></i>
                             </div>
                             <div>
@@ -1197,7 +1284,7 @@
                         </div>
 
                         <div class="flex items-start space-x-3.5">
-                            <div class="w-11 h-11 bg-vedic-100 text-vedic-800 rounded-xl flex items-center justify-center shrink-0">
+                            <div class="w-11 h-11 bg-bhagwa-100 text-bhagwa-800 rounded-xl flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-phone text-lg"></i>
                             </div>
                             <div>
@@ -1208,7 +1295,7 @@
                         </div>
 
                         <div class="flex items-start space-x-3.5">
-                            <div class="w-11 h-11 bg-vedic-100 text-vedic-800 rounded-xl flex items-center justify-center shrink-0">
+                            <div class="w-11 h-11 bg-bhagwa-100 text-bhagwa-800 rounded-xl flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-envelope text-lg"></i>
                             </div>
                             <div>
@@ -1219,7 +1306,7 @@
                         </div>
 
                         <div class="flex items-start space-x-3.5">
-                            <div class="w-11 h-11 bg-vedic-100 text-vedic-800 rounded-xl flex items-center justify-center shrink-0">
+                            <div class="w-11 h-11 bg-bhagwa-100 text-bhagwa-800 rounded-xl flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-clock text-lg"></i>
                             </div>
                             <div>
@@ -1231,46 +1318,46 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <form onsubmit="handleContactSubmit(event)" class="bg-white p-8 rounded-3xl shadow-sm border border-[#E9DFCE] space-y-4">
-                        <h3 class="text-lg font-bold text-vedic-950 font-serif mb-1">Send a Message or Request a Visit</h3>
+                    <form onsubmit="handleContactSubmit(event)" class="bg-white p-8 rounded-3xl shadow-sm border border-[#EEDFCB] space-y-4">
+                        <h3 class="text-lg font-bold text-bhagwa-950 font-serif mb-1">Send a Message or Request a Visit</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Your Full Name *</label>
-                                <input type="text" required class="w-full px-4 py-3 bg-[#FAF8F5] border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-gold-500" placeholder="Enter name">
+                                <input type="text" required class="w-full px-4 py-3 bg-[#FAF5EB] border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-bhagwa-500" placeholder="Enter name">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Mobile Number *</label>
-                                <input type="tel" required class="w-full px-4 py-3 bg-[#FAF8F5] border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-gold-500" placeholder="+91 98765 00000">
+                                <input type="tel" required class="w-full px-4 py-3 bg-[#FAF5EB] border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-bhagwa-500" placeholder="+91 98765 00000">
                             </div>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Your Message or Seva Enquiry *</label>
-                            <textarea rows="4" required class="w-full px-4 py-3 bg-[#FAF8F5] border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-gold-500" placeholder="How would you like to support or visit the gaushala?"></textarea>
+                            <textarea rows="4" required class="w-full px-4 py-3 bg-[#FAF5EB] border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-bhagwa-500" placeholder="How would you like to support or visit the gaushala?"></textarea>
                         </div>
-                        <button type="submit" class="bg-vedic-900 hover:bg-vedic-950 text-white font-bold px-8 py-3.5 rounded-xl shadow-md transition flex items-center space-x-2">
+                        <button type="submit" class="bg-bhagwa-900 hover:bg-bhagwa-950 text-white font-bold px-8 py-3.5 rounded-xl shadow-md transition flex items-center space-x-2">
                             <span>Submit Enquiry</span>
-                            <i class="fa-solid fa-paper-plane text-xs text-gold-400"></i>
+                            <i class="fa-solid fa-paper-plane text-xs text-kesar-300"></i>
                         </button>
                     </form>
                 </div>
 
                 <!-- Right Visual Map & Directions Card -->
                 <div class="lg:col-span-5">
-                    <div class="bg-white p-5 rounded-3xl shadow-sm border border-[#E9DFCE] h-full min-h-[460px] flex flex-col justify-between">
+                    <div class="bg-white p-5 rounded-3xl shadow-sm border border-[#EEDFCB] h-full min-h-[460px] flex flex-col justify-between">
                         <div class="relative w-full rounded-2xl overflow-hidden bg-gray-100 min-h-[380px] flex-grow">
-                            <!-- Live Verified Heritage Land View Image -->
-                            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1000&q=80" 
+                            <!-- Live Verified 4K Heritage Land View Image -->
+                            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=95" 
                                  alt="Mathura Gaushala Location Map" 
                                  class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#062117]/80 via-[#062117]/30 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#200601]/85 via-[#200601]/30 to-transparent"></div>
                             
-                            <!-- Location Pin Centerpiece -->
+                            <!-- Location Pin Centerpiece in Saffron -->
                             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full px-4">
-                                <div class="w-14 h-14 bg-gradient-to-tr from-gold-600 to-gold-400 text-vedic-950 rounded-full flex items-center justify-center text-2xl shadow-2xl animate-bounce mx-auto border-2 border-white">
+                                <div class="w-14 h-14 bg-gradient-to-tr from-bhagwa-600 to-kesar-400 text-white rounded-full flex items-center justify-center text-2xl shadow-2xl animate-bounce mx-auto border-2 border-white">
                                     <i class="fa-solid fa-location-dot"></i>
                                 </div>
-                                <div class="bg-white/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-xl mt-3 inline-block border border-gold-300">
-                                    <h4 class="font-extrabold text-xs text-vedic-950 uppercase tracking-wide">Shree Gau Seva Dham Trust</h4>
+                                <div class="bg-white/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-xl mt-3 inline-block border border-kesar-300">
+                                    <h4 class="font-extrabold text-xs text-bhagwa-950 uppercase tracking-wide">Shree Gau Seva Dham Trust</h4>
                                     <p class="text-[11px] text-gray-600">Mathura - Vrindavan, Uttar Pradesh</p>
                                 </div>
                             </div>
@@ -1281,7 +1368,7 @@
                                 <span class="font-bold text-gray-900 block">Nearest Landmarks:</span>
                                 <span>3.5 Km from Mathura Junction Railway Station</span>
                             </div>
-                            <a href="https://maps.google.com" target="_blank" class="text-xs font-bold bg-gold-100 text-gold-900 hover:bg-gold-200 px-3.5 py-2 rounded-xl border border-gold-300 transition shrink-0">
+                            <a href="https://maps.google.com" target="_blank" class="text-xs font-bold bg-bhagwa-100 text-bhagwa-900 hover:bg-bhagwa-200 px-3.5 py-2 rounded-xl border border-bhagwa-300 transition shrink-0">
                                 Get Directions <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
                             </a>
                         </div>
@@ -1291,19 +1378,19 @@
         </div>
     </section>
 
-    <!-- Footer (Prestigious Royal Trust Appearance) -->
-    <footer class="bg-[#051B14] text-white pt-20 pb-12 border-t-2 border-gold-500/40">
+    <!-- Footer (Sacred Bhagwa & Temple Mahogany Appearance) -->
+    <footer class="bg-[#1D0501] text-white pt-20 pb-12 border-t-2 border-bhagwa-500/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Newsletter & Sankalp Strip -->
-            <div class="bg-gradient-to-r from-[#0a3827] via-[#0d4631] to-[#072a1e] border border-gold-500/30 rounded-3xl p-6 sm:p-10 mb-16 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+            <!-- Newsletter Strip -->
+            <div class="bg-gradient-to-r from-[#3B1106] via-[#4D1708] to-[#2E0B03] border border-bhagwa-500/30 rounded-3xl p-6 sm:p-10 mb-16 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
                 <div>
-                    <span class="text-xs font-bold text-gold-400 uppercase tracking-wider block mb-1">Connect with Gomata's Mission</span>
+                    <span class="text-xs font-bold text-kesar-400 uppercase tracking-wider block mb-1">Connect with Gomata's Mission</span>
                     <h3 class="text-2xl sm:text-3xl font-extrabold font-serif">Receive Monthly Gau Darshan & Reports</h3>
-                    <p class="text-gold-100/80 text-sm mt-1">Get authentic monthly videos, health updates, and festival aarti schedule directly.</p>
+                    <p class="text-kesar-100/80 text-sm mt-1">Get authentic monthly videos, health updates, and festival aarti schedule directly.</p>
                 </div>
                 <form onsubmit="handleNewsletter(event)" class="flex w-full lg:w-auto gap-2.5">
-                    <input type="email" required placeholder="Enter your email address" class="px-5 py-3.5 rounded-xl bg-black/40 border border-gold-500/40 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-gold-400 w-full sm:w-80">
-                    <button type="submit" class="shimmer-gold text-vedic-950 font-bold px-7 py-3.5 rounded-xl text-sm transition shrink-0 shadow-md">
+                    <input type="email" required placeholder="Enter your email address" class="px-5 py-3.5 rounded-xl bg-black/40 border border-bhagwa-500/40 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-kesar-400 w-full sm:w-80">
+                    <button type="submit" class="shimmer-bhagwa text-white font-bold px-7 py-3.5 rounded-xl text-sm transition shrink-0 shadow-md">
                         Subscribe
                     </button>
                 </form>
@@ -1314,56 +1401,56 @@
                 <!-- Col 1: Trust Logo & Reg Info -->
                 <div class="lg:col-span-4 space-y-4">
                     <div class="flex items-center space-x-3.5">
-                        <div class="w-12 h-12 bg-gradient-to-br from-gold-500 to-amber-700 rounded-2xl flex items-center justify-center text-vedic-950 font-bold text-xl shadow">
+                        <div class="w-12 h-12 bg-gradient-to-br from-bhagwa-600 to-kesar-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow">
                             <i class="fa-solid fa-cow"></i>
                         </div>
                         <div>
                             <span class="text-xl font-bold text-white font-serif block">Shree Gau Seva Dham</span>
-                            <span class="text-xs text-gold-300">Reg. Public Charitable Trust</span>
+                            <span class="text-xs text-kesar-300">Reg. Public Charitable Trust</span>
                         </div>
                     </div>
                     <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                        Dedicated to the complete physical, medical, and nutritional protection of abandoned, injured, and non-milking cows with genuine reverence.
+                        Dedicated to the complete physical, medical, and nutritional protection of abandoned, injured, and non-milking cows with genuine Sanatan reverence.
                     </p>
                     <div class="pt-2 text-xs text-gray-400 space-y-1">
-                        <p><strong class="text-gold-300">Trust Regn:</strong> TRUST/UP/MTR/2012/8492</p>
-                        <p><strong class="text-gold-300">12A & 80G Approval:</strong> AACTS8932RE20214</p>
-                        <p><strong class="text-gold-300">NITI Aayog Darpan:</strong> UP/2021/0293812</p>
+                        <p><strong class="text-kesar-300">Trust Regn:</strong> TRUST/UP/MTR/2012/8492</p>
+                        <p><strong class="text-kesar-300">12A & 80G Approval:</strong> AACTS8932RE20214</p>
+                        <p><strong class="text-kesar-300">NITI Aayog Darpan:</strong> UP/2021/0293812</p>
                     </div>
                 </div>
 
-                <!-- Col 2: Quick Links -->
+                <!-- Col 2: Quick Links (Short & Clean) -->
                 <div class="lg:col-span-3 space-y-3">
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400 font-serif">Quick Navigation</h4>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-kesar-400 font-serif">Quick Navigation</h4>
                     <ul class="space-y-2 text-sm text-gray-300">
-                        <li><a href="#home" class="hover:text-gold-300 transition">&rarr; Home</a></li>
-                        <li><a href="#about" class="hover:text-gold-300 transition">&rarr; About the Trust</a></li>
-                        <li><a href="#services" class="hover:text-gold-300 transition">&rarr; Our Seva & Hospital</a></li>
-                        <li><a href="#gaushala" class="hover:text-gold-300 transition">&rarr; The Sanctuary</a></li>
-                        <li><a href="#gallery" class="hover:text-gold-300 transition">&rarr; Photo Gallery</a></li>
+                        <li><a href="#home" class="hover:text-kesar-300 transition">&rarr; Home</a></li>
+                        <li><a href="#about" class="hover:text-kesar-300 transition">&rarr; About Trust</a></li>
+                        <li><a href="#services" class="hover:text-kesar-300 transition">&rarr; Our Seva & Hospital</a></li>
+                        <li><a href="#gaushala" class="hover:text-kesar-300 transition">&rarr; The Sanctuary</a></li>
+                        <li><a href="#gallery" class="hover:text-kesar-300 transition">&rarr; Photo Darshan (4K)</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 3: Seva Schemes -->
                 <div class="lg:col-span-3 space-y-3">
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400 font-serif">Seva Schemes</h4>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-kesar-400 font-serif">Seva Schemes</h4>
                     <ul class="space-y-2 text-sm text-gray-300">
-                        <li><a href="#donations" class="hover:text-gold-300 transition">&rarr; One Day Gau Gras (₹500)</a></li>
-                        <li><a href="#donations" class="hover:text-gold-300 transition">&rarr; Medical Treatment Kit (₹1,100)</a></li>
-                        <li><a href="#donations" class="hover:text-gold-300 transition">&rarr; Adopt a Cow Monthly (₹2,500)</a></li>
-                        <li><a href="#donations" class="hover:text-gold-300 transition">&rarr; Weatherproof Shed Seva (₹5,100)</a></li>
-                        <li><a href="#donations" class="hover:text-gold-300 transition">&rarr; Lifetime Patronage (₹11,000+)</a></li>
+                        <li><a href="#donations" class="hover:text-kesar-300 transition">&rarr; One Day Gau Gras (₹500)</a></li>
+                        <li><a href="#donations" class="hover:text-kesar-300 transition">&rarr; Medical Treatment Kit (₹1,100)</a></li>
+                        <li><a href="#donations" class="hover:text-kesar-300 transition">&rarr; Adopt a Cow Monthly (₹2,500)</a></li>
+                        <li><a href="#donations" class="hover:text-kesar-300 transition">&rarr; Weatherproof Shed Seva (₹5,100)</a></li>
+                        <li><a href="#donations" class="hover:text-kesar-300 transition">&rarr; Lifetime Patronage (₹11,000+)</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 4: Follow & Social -->
                 <div class="lg:col-span-2 space-y-4">
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400 font-serif">Join the Community</h4>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-kesar-400 font-serif">Join the Community</h4>
                     <p class="text-xs text-gray-400">Follow our daily stories of rescued cows on social media.</p>
                     <div class="flex space-x-3 pt-1">
-                        <a href="https://facebook.com" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-gold-500 hover:text-vedic-950 rounded-xl flex items-center justify-center text-white transition shadow"><i class="fa-brands fa-facebook-f text-sm"></i></a>
-                        <a href="https://instagram.com" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-gold-500 hover:text-vedic-950 rounded-xl flex items-center justify-center text-white transition shadow"><i class="fa-brands fa-instagram text-sm"></i></a>
-                        <a href="https://youtube.com" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-gold-500 hover:text-vedic-950 rounded-xl flex items-center justify-center text-white transition shadow"><i class="fa-brands fa-youtube text-sm"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-bhagwa-600 hover:text-white rounded-xl flex items-center justify-center text-white transition shadow"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-bhagwa-600 hover:text-white rounded-xl flex items-center justify-center text-white transition shadow"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="https://youtube.com" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-bhagwa-600 hover:text-white rounded-xl flex items-center justify-center text-white transition shadow"><i class="fa-brands fa-youtube text-sm"></i></a>
                         <a href="https://wa.me/919876543210" target="_blank" class="w-9 h-9 bg-white/10 hover:bg-emerald-500 hover:text-white rounded-xl flex items-center justify-center text-white transition shadow"><i class="fa-brands fa-whatsapp text-sm"></i></a>
                     </div>
                 </div>
@@ -1374,35 +1461,35 @@
                 <p>&copy; 2026 Shree Gau Seva Dham Trust. All Rights Reserved. Reg. Non-profit Public Charitable Trust.</p>
                 <p class="flex items-center space-x-1.5">
                     <span>Dedicated to Gau Raksha with</span>
-                    <i class="fa-solid fa-heart text-red-500"></i>
+                    <i class="fa-solid fa-heart text-bhagwa-500"></i>
                     <span>in Mathura-Vrindavan Dham</span>
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- Interactive Donation / UPI QR Modal -->
+    <!-- Interactive Donation / UPI QR Modal (Bhagwa Aesthetic) -->
     <div id="payment-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm hidden px-4">
-        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full mx-auto shadow-2xl relative border-2 border-gold-400 animate-in fade-in zoom-in duration-300">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full mx-auto shadow-2xl relative border-2 border-bhagwa-400 animate-in fade-in zoom-in duration-300">
             <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-lg p-2">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
             <div class="text-center space-y-3">
-                <div class="w-14 h-14 bg-gold-100 text-gold-800 rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold shadow-inner">
+                <div class="w-14 h-14 bg-bhagwa-100 text-bhagwa-800 rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold shadow-inner">
                     <i class="fa-solid fa-qrcode"></i>
                 </div>
-                <h3 class="text-xl font-extrabold text-vedic-950 font-serif">Scan to Donate via UPI</h3>
+                <h3 class="text-xl font-extrabold text-bhagwa-950 font-serif">Scan to Donate via UPI</h3>
                 <p class="text-xs text-gray-600">Scan using Google Pay, PhonePe, Paytm, BHIM, or any UPI App</p>
 
                 <!-- Amount Pill -->
-                <div class="bg-gold-50 border border-gold-300 text-gold-900 rounded-2xl p-3">
+                <div class="bg-bhagwa-50 border border-bhagwa-200 text-bhagwa-900 rounded-2xl p-3">
                     <span class="text-xs uppercase tracking-wider block font-semibold">Total Donation Amount</span>
-                    <span id="modal-amount-display" class="text-2xl font-black text-vedic-950">₹500</span>
+                    <span id="modal-amount-display" class="text-2xl font-black text-bhagwa-950">₹500</span>
                 </div>
 
                 <!-- Live Mock UPI QR Code -->
-                <div class="p-3 bg-white border-2 border-dashed border-gold-400 rounded-2xl inline-block shadow-sm">
+                <div class="p-3 bg-white border-2 border-dashed border-bhagwa-400 rounded-2xl inline-block shadow-sm">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=gauseva@sbi&pn=ShreeGauSevaDham&cu=INR" 
                          alt="UPI QR Code for Gau Seva" 
                          class="w-40 h-40 mx-auto rounded-lg">
@@ -1411,7 +1498,7 @@
                 <!-- UPI ID Copy Bar -->
                 <div class="bg-gray-50 border border-gray-200 rounded-xl p-2.5 flex items-center justify-between text-xs">
                     <span class="font-mono text-gray-800 font-semibold">gauseva@sbi</span>
-                    <button onclick="copyUpiId()" class="bg-vedic-900 hover:bg-vedic-950 text-white px-3 py-1 rounded-lg font-bold transition">
+                    <button onclick="copyUpiId()" class="bg-bhagwa-900 hover:bg-bhagwa-950 text-white px-3 py-1 rounded-lg font-bold transition">
                         Copy UPI ID
                     </button>
                 </div>
@@ -1420,23 +1507,23 @@
                     <p>80G Tax Exemption receipt will be automatically sent to your registered Email & Phone.</p>
                 </div>
 
-                <button onclick="confirmPaymentComplete()" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-xl text-sm transition shadow-md">
+                <button onclick="confirmPaymentComplete()" class="w-full shimmer-bhagwa text-white font-bold py-3 rounded-xl text-sm transition shadow-md">
                     I Have Completed the Payment &rarr;
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Gallery Lightbox Modal -->
+    <!-- Gallery Lightbox Modal in 4K -->
     <div id="lightbox-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md hidden p-4" onclick="closeLightbox()">
-        <div class="relative max-w-4xl w-full mx-auto" onclick="event.stopPropagation()">
-            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-gold-400 text-2xl p-2">
+        <div class="relative max-w-5xl w-full mx-auto" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-kesar-300 text-2xl p-2">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="overflow-hidden rounded-2xl shadow-2xl border-2 border-gold-500/40 bg-black">
-                <img id="lightbox-img" src="" alt="Zoomed Gaushala View" class="w-full max-h-[80vh] object-contain mx-auto">
-                <div class="bg-[#051B14] p-4 text-center border-t border-gold-500/20">
-                    <p id="lightbox-caption" class="text-sm font-semibold text-gold-300"></p>
+            <div class="overflow-hidden rounded-2xl shadow-2xl border-2 border-bhagwa-500/40 bg-black">
+                <img id="lightbox-img" src="" alt="Zoomed Gaushala View" class="w-full max-h-[82vh] object-contain mx-auto">
+                <div class="bg-[#240802] p-4 text-center border-t border-bhagwa-500/30">
+                    <p id="lightbox-caption" class="text-sm font-semibold text-kesar-300"></p>
                 </div>
             </div>
         </div>
@@ -1444,13 +1531,13 @@
 
     <!-- Custom Notification Toast Modal -->
     <div id="custom-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden px-4">
-        <div class="bg-white rounded-3xl p-6 sm:p-7 max-w-sm w-full mx-auto shadow-2xl text-center space-y-4 border-2 border-gold-400">
-            <div class="w-14 h-14 bg-emerald-100 text-emerald-800 rounded-2xl flex items-center justify-center text-2xl mx-auto shadow-inner">
-                <i class="fa-solid fa-hands-praying text-emerald-700"></i>
+        <div class="bg-white rounded-3xl p-6 sm:p-7 max-w-sm w-full mx-auto shadow-2xl text-center space-y-4 border-2 border-bhagwa-400">
+            <div class="w-14 h-14 bg-bhagwa-100 text-bhagwa-800 rounded-2xl flex items-center justify-center text-2xl mx-auto shadow-inner">
+                <i class="fa-solid fa-hands-praying text-bhagwa-700"></i>
             </div>
-            <h3 id="modal-title" class="text-lg font-bold text-vedic-950 font-serif">Gratitude & Blessings</h3>
+            <h3 id="modal-title" class="text-lg font-bold text-bhagwa-950 font-serif">Gratitude & Blessings</h3>
             <p id="modal-message" class="text-xs sm:text-sm text-gray-600 leading-relaxed"></p>
-            <button onclick="closeMessageBox()" class="w-full shimmer-gold text-vedic-950 font-bold py-2.5 rounded-xl text-xs sm:text-sm transition shadow">
+            <button onclick="closeMessageBox()" class="w-full shimmer-bhagwa text-white font-bold py-2.5 rounded-xl text-xs sm:text-sm transition shadow">
                 Pranam / OK
             </button>
         </div>
@@ -1461,15 +1548,29 @@
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            if (menuIcon) {
+                if (isHidden) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            }
         });
 
         // Close mobile menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
             });
         });
 
@@ -1483,9 +1584,9 @@
             amountInput.value = val;
             amountBtns.forEach(btn => {
                 if (parseInt(btn.innerText.replace(/[^0-9]/g, '')) === val) {
-                    btn.classList.add('bg-gold-50', 'border-gold-500', 'text-gold-900');
+                    btn.classList.add('bg-bhagwa-50', 'border-bhagwa-500', 'text-bhagwa-900');
                 } else {
-                    btn.classList.remove('bg-gold-50', 'border-gold-500', 'text-gold-900');
+                    btn.classList.remove('bg-bhagwa-50', 'border-bhagwa-500', 'text-bhagwa-900');
                 }
             });
         }
@@ -1587,6 +1688,4 @@
         }
     </script>
 </body>
-</html>
-
 </html>
